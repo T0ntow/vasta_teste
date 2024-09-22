@@ -1,0 +1,132 @@
+/* Top bar styles */
+.header-top-bar {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 100px;
+}
+
+.contact-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main header styles */
+.main-header {
+    margin: 0 150px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    width: 140px;
+    height: 42px;
+}
+
+.search-bar {
+    flex-grow: 2;
+    padding: 0 20px;
+    max-width: 600px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.search-input-container  input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid #252525;
+}
+
+.search-button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #252525;
+    border-radius: 25px;
+    position: absolute;
+    height: 38px;
+    right: 0;
+    width: 120px;
+    font-size: 1.2rem;
+}
+
+.search-button i{
+    font-size: 15px;
+}
+
+/* Cart styles */
+.cart {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-link {
+    color: #000;
+    text-decoration: none;
+    position: relative;
+}
+
+.cart-icon {
+    font-size: 25px;
+}
+
+.cart-count {
+    background-color: #00C371;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    position: absolute;
+    top: -7px;
+    right: -2px;
+    font-size: 1.1rem;
+}
+
+.cart span {
+   font-size: .9rem;
+}
+
+
+/* Navigation menu styles */
+.navigation-menu {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    gap: 53px;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: .9rem;
+}
