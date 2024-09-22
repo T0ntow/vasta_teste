@@ -1,0 +1,93 @@
+{% schema %}
+  {
+    "name": "Banner Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "reviews_text",
+        "label": "Reviews Text",
+        "default": "WITH 1600+ 5-STAR REVIEWS"
+      },
+      {
+        "type": "text",
+        "id": "stars",
+        "label": "Stars",
+        "default": "★★★★★"
+      },
+      {
+        "type": "text",
+        "id": "headline_text",
+        "label": "Headline Text",
+        "default": "Lorem ipsum dolor sit amet consectetur"
+      },
+      {
+        "type": "text",
+        "id": "subtext_text",
+        "label": "Subtext Text",
+        "default": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus"
+      }, {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image",
+        "default": "back-banner.png"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "View More"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link",
+        "default": "#"
+      }
+    ]
+  }
+{% endschema %}
+<section class="banner-section">
+  <div class="container">
+    <div class="banner-content">
+      <div class="text-content">
+        <p class="reviews">{{ section.settings.reviews_text }}
+          <span id="stars">{{ section.settings.stars }}</span>
+        </p>
+        <h1 class="headline">{{ section.settings.headline_text }}</h1>
+        <p class="subtext">{{ section.settings.subtext_text }}</p>
+
+        <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_text }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+  .banner-section {
+    background-image: url('{{ 'back-banner.png' | asset_url }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 150px 0;
+    position: relative;
+    text-align: left;
+    height: 506px;
+    /* Altura padrão */
+  }
+
+  /* Para telas medias (900px) */
+  @media (max-width: 900px) {
+    .banner-section {
+      height: 286px;
+      padding: 35px 0;
+    }
+  }
+
+  /* Para telas menores (600px) */
+  @media (max-width: 500px) {
+    .banner-section {
+      background-image: url('{{ 'back-banner-mobile.png' | asset_url }}');
+      height: 526px;
+      padding: 35px 0;
+    }
+  }
+</style>

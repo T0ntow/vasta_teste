@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 150px ;
+    color: hsl(0, 0%, 100%);
+}
+
+.text-content {
+    max-width: 595px;
+}
+
+.text-content .reviews #stars {
+    color:#FFB800CC;
+}
+
+.headline {
+    font-size: 45px;
+}
+.text-content .reviews {
+    font-size: 16px;
+}
+.subtext {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.button {
+    background-color: #00AC4F;
+    color: #fff;
+    padding: 20px 36px;
+    text-decoration: none;
+    border-radius: 109px;
+    font-size: 20px;
+    height: 54px;
+    width: 169px;
+}
+
+.button:hover {
+    background-color: #007a39;
+}
+
+@media screen and (max-width: 1200px) {
+    .banner-content {
+        margin-left: 50px;
+    }
+    
+    .headline {
+        font-size: 40px;
+    }
+
+    .subtext {
+        font-size: 16px;
+    }
+}
+
+
+/* Media query para tablets */
+@media (max-width: 900px) {
+    .text-content .reviews {
+        font-size: 12px;
+    }
+
+    .headline {
+        font-size: 34px;
+    }
+
+    .subtext {
+        font-size: 14px;
+    }
+
+    .button {
+        height: 45px;
+        width: 159px;
+        font-size: 18px;
+        padding: 16px 36px;
+    }
+}
+
+/* Media query para celulares */
+@media (max-width: 500px) {
+    .banner-content {
+        margin-left: 0;
+    }
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .text-content .reviews {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .headline {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subtext {
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        height: 45px;
+        width: auto;
+        font-size: 18px;
+        padding: 16px 36px;
+    }
+}

@@ -187,6 +187,7 @@
 
     .mobile-style {
         display: block;
+        margin-bottom: 50px;
     }
 
     .contact-link {
@@ -213,7 +214,7 @@
 
 
 
-/* Media query para tablets */
+/* Media query para celulares */
 @media (max-width: 500px) {
     .mobile-style .search-bar .search-input-container input {
         height: 29px !important;

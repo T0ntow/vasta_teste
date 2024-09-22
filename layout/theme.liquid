@@ -7,8 +7,18 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    <link rel="stylesheet" href="{{ 'header-style.css' | asset_url }}">
 
+    {% comment %} ESTILOS {% endcomment %}
+    <link rel="stylesheet" href="{{ 'header-style.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'banner-style.css' | asset_url }}">
+
+
+    {% comment %} FONTE {% endcomment %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+
+    
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -29,7 +39,8 @@
 
   <body style="padding: 0; margin: 0">
       {% section 'header' %}
-  
+      {% section 'banner' %}
+
       <main role="main" tabindex="-1">
         {{ content_for_layout }}
       </main>
