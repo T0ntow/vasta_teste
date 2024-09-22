@@ -1,1 +1,30 @@
-{"current":{"sections":{"header":{"type":"header","settings":{"email_address":"info@brand.coms","shipping_message":"fsdfds","header_bg_color":"#000000"}}},"content_for_index":[]},"presets":{"Default":{}}}
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "email_address": "info@brand.coms",
+          "shipping_message": "WE PAY SHIPPING ON ORDERS OVER $X",
+          "header_bg_color": "#000000"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+    }
+  }
+}
