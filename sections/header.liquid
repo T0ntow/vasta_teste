@@ -37,13 +37,18 @@
       <div>
         <a href="mailto:{{ section.settings.email_address }}" class="contact-link">
           <i class="fa fa-envelope"></i> 
+          <span id="email-adress">
           {{ section.settings.email_address }}
+          </span>
         </a>
       </div>
-      <div>{{ section.settings.shipping_message }}</div>
+      <div class="contact-link">{{ section.settings.shipping_message }}</div>
       <div>
         <a href="tel:+11112223333" class="contact-link">
-          <i class="fa fa-phone"></i> +1 (111) 222-3333
+          <i class="fa fa-phone"></i> 
+          <span id="phone">
+            +1 (111) 222-3333
+          </span>
         </a>
       </div>
     </div>
@@ -78,6 +83,43 @@
         <span class="cart-count">{{ cart.item_count }}</span>
       </a>
       <span>CART</span>
+    </div>
+  </div> 
+
+  <!-- Main header to mobile -->
+  <div class="mobile-style">
+    <div class="container-top">
+      <div class="menu">
+        <i class="fa fa-bars"></i>
+        <span>Menu</span>
+      </div>
+
+      <div class="logo">
+        <a href="/">
+          <img src="{{ 'logoDark.png' | asset_url }}" alt="Vasta Logo" width="140" height="42" class="logo-img">
+        </a>
+      </div>
+      <!-- Cart icon -->
+      <div class="cart">
+        <a href="/cart" class="cart-link">
+          <i class="fa fa-shopping-cart cart-icon"></i>
+          <span class="cart-count">{{ cart.item_count }}</span>
+        </a>
+        <span>CART</span>
+      </div>
+    </div>
+
+     <!-- Search bar -->
+     <div class="search-bar">
+      <form action="/search" method="get" role="search" class="search-form">
+        <div class="search-input-container">
+          <input type="text" name="search" placeholder="Search Lorem Ipsum">
+          <button type="submit" class="search-button">
+            Search
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 
