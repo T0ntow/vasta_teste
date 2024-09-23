@@ -3,64 +3,26 @@
   <div class="container">
     <h2>{{ section.settings.title }}</h2>
     <div class="collection-slider">
-      <button class="nav-button prev">
-        <i class="fas fa-chevron-left"></i> <!-- Ícone de seta para a esquerda -->
-      </button>
-
       <div class="collection-items">
-        <div class="collection-item">
-          <a href="/colecao-1">
-            <img src="{{ 'image1.png' | asset_url }}" alt="Imagem da Coleção 1">
-            <div class="collection-item-text">
-              <h3>Coleção 1</h3>
-            </div>
-          </a>
-        </div>
-        <div class="collection-item">
-          <a href="/colecao-2">
-            <img src="{{ 'image1.png' | asset_url }}" alt="Imagem da Coleção 2">
-            <div class="collection-item-text">
-              <h3>Coleção 2</h3>
-            </div>
-          </a>
-        </div>
-        <div class="collection-item">
-          <a href="/colecao-3">
-            <img src="{{ 'image1.png' | asset_url }}" alt="Imagem da Coleção 3">
-            <div class="collection-item-text">
-              <h3>Coleção 3</h3>
-            </div>
-          </a>
-        </div>
-        <div class="collection-item">
-          <a href="/colecao-4">
-            <img src="{{ 'image1.png' | asset_url }}" alt="Imagem da Coleção 4">
-            <div class="collection-item-text">
-              <h3>Coleção 4</h3>
-            </div>
-          </a>
-        </div>
-        <div class="collection-item">
-          <a href="/colecao-5">
-            <img src="{{ 'image1.png' | asset_url }}" alt="Imagem da Coleção 5">
-            <div class="collection-item-text">
-              <h3>Coleção 5</h3>
-            </div>
-          </a>
-        </div>
-        <div class="collection-item">
-          <a href="/colecao-6">
-            <img src="{{ 'image1.png' | asset_url }}" alt="Imagem da Coleção 6">
-            <div class="collection-item-text">
-              <h3>Coleção 6</h3>
-            </div>
-          </a>
-        </div>
-      </div>
+        <button class="nav-button prev">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
 
-      <button class="nav-button next">
-        <i class="fas fa-chevron-right"></i> <!-- Ícone de seta para a direita -->
-      </button>
+        {% for block in section.blocks %}
+        <div class="collection-item">
+          <a href="{{ block.settings.link }}">
+            <img src="{{ block.settings.image | img_url: 'small' }}" alt="{{ block.settings.alt_text }}">
+            <div class="collection-item-text">
+              <h3>{{ block.settings.text }}</h3>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+        <button class="nav-button next">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -76,6 +38,36 @@
       "default": "Shop by Collection"
     }
   ],
+  "blocks": [
+    {
+      "type": "collection_item",
+      "name": "Collection Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Coleção"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "Alt Text",
+          "default": "Imagem da Coleção"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Shop by Collection",
@@ -84,3 +76,27 @@
   ]
 }
 {% endschema %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const collectionSlider = document.querySelector('.collection-items');
+    const prevButton = document.querySelector('.nav-button.prev');
+    const nextButton = document.querySelector('.nav-button.next');
+
+    // Função para rolar para a esquerda
+    prevButton.addEventListener('click', function() {
+      collectionSlider.scrollBy({
+        left: -300, 
+        behavior: 'smooth'
+      });
+    });
+
+    // Função para rolar para a direita
+    nextButton.addEventListener('click', function() {
+      collectionSlider.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
