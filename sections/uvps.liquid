@@ -1,0 +1,60 @@
+{% schema %}
+  {
+    "name": "Icon Feature Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Section Title",
+        "default": "Shop Smarter, Shop With Vasta"
+      },
+      {
+        "type": "text",
+        "id": "text_1",
+        "label": "Text 1",
+        "default": "Lorem Ipsum Dolor Sit Amet Consectetur"
+      },
+      {
+        "type": "text",
+        "id": "text_2",
+        "label": "Text 2",
+        "default": "Lorem Ipsum Dolor Sit Amet Consectetur"
+      },
+      {
+        "type": "text",
+        "id": "text_3",
+        "label": "Text 3",
+        "default": "Lorem Ipsum Dolor Sit Amet Consectetur"
+      },
+      {
+        "type": "text",
+        "id": "text_4",
+        "label": "Text 4",
+        "default": "Lorem Ipsum Dolor Sit Amet Consectetur"
+      }
+    ]
+  }
+  {% endschema %}
+  
+  <section class="icon-feature-section">
+    <div class="container">
+      <h2>{{ section.settings.section_title }}</h2>
+      <div class="icon-feature-grid">
+        <div class="icon-feature-item">
+          <img src="{{'UVP1-Icon.png' | asset_url}}" alt="Icon 1">
+          <p>{{ section.settings.text_1 }}</p>
+        </div>
+        <div class="icon-feature-item">
+          <img src="{{'UVP2-Icon.png' | asset_url}}" alt="Icon 2">
+          <p>{{ section.settings.text_2 }}</p>
+        </div>
+        <div class="icon-feature-item">
+          <img src="{{'UVP3-Icon.png' | asset_url}}"  alt="Icon 3">
+          <p>{{ section.settings.text_3 }}</p>
+        </div>
+        <div class="icon-feature-item">
+          <img src="{{'UVP4-Icon.png' | asset_url}}"  alt="Icon 4">
+          <p>{{ section.settings.text_4 }}</p>
+        </div>
+      </div>
+    </div>

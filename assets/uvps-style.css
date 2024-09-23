@@ -1,0 +1,122 @@
+.icon-feature-section {
+    text-align: center;
+    height: 344px;
+    display: flex;
+    justify-content: center;
+
+    padding: 60px 0;
+}
+
+.icon-feature-section h2 {
+    margin-bottom: 35px;
+    font-size: 36px;
+    color: #252525;
+    font-weight: 700;
+}
+
+.icon-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    width: 100%;
+    gap: 88px;
+    overflow-x: hidden;
+    justify-content: center; /* Centraliza o grid horizontalmente */
+}
+
+.icon-feature-item {
+    text-align: center;
+    width: 226px;
+    color: #252525;
+    position: relative;
+}
+
+.icon-feature-item:nth-child(-n+3)::after{
+    content: "";
+    position: absolute;
+    right: -44px; /* Coloca a linha 44px fora do item */
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: #0000001A;
+}
+
+.icon-feature-item img {
+    margin-bottom: 10px;
+
+    width: 74px;
+    height: 74px;
+}
+
+.icon-feature-item p {
+    font-size: 18px;
+    color: #252525;
+}
+
+@media (max-width: 1200px) {
+    .icon-feature-section h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .icon-feature-grid {
+        gap: 15px;
+    }
+
+    .icon-feature-item {
+        width: 128px;
+        padding: 0 15px;
+    }
+
+    .icon-feature-item img {
+        width: 54px;
+        height: 54px;
+    }
+
+    .icon-feature-item p {
+        font-size: 14px;
+    }
+
+    .icon-feature-item:nth-child(-n+3)::after{
+        right: -15px; /* Coloca a linha 44px fora do item */
+    }
+}
+
+@media (max-width: 700px) {
+    .icon-feature-section h2 {
+        margin-bottom: 18px;
+    }
+
+    .icon-feature-grid {
+        grid-template-columns: repeat(2, 1fr); /* Define layout de 2 colunas */
+        display: grid;
+        justify-content: center; 
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .icon-feature-item:nth-child(-n+3)::after{
+        right: -25px; /* Coloca a linha 44px fora do item */
+    }
+
+    .icon-feature-item {
+        width: 142px;
+        margin: auto;
+        padding: 11px 0;
+    }
+
+    /* Remover as bordas no grid de 2 colunas */
+    .icon-feature-item:nth-child(2)::after,
+    .icon-feature-item:nth-child(4)::after {
+        content: none; /* Nenhuma borda na segunda e quarta colunas no mobile */
+    }
+}
+
+@media (max-width: 500px) {
+    /* Remove a borda quando em layout de 2 colunas */
+    .icon-feature-item:nth-child(1)::after,
+    .icon-feature-item:nth-child(3)::after {
+        right: -20px; /* Espaço da borda ajustado */
+    }
+   
+}
