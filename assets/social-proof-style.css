@@ -82,10 +82,13 @@
     margin-bottom: 10px;
 }
 
-.review-item p.stars {
+.review-item .stars {
     color: yellow;
-    /* Cor dourada para estrelas */
     font-size: 1.5em;
+}
+
+.stars span {
+    margin-right: 5px;
 }
 
 /* Comentário do Avaliador */
