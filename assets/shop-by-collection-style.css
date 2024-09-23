@@ -93,6 +93,7 @@
 
 .collection-item {
     flex: 0 0 243px;
+    width: 243px;
     position: relative;
 }
 
