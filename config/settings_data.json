@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "sections": {
@@ -7,6 +16,57 @@
           "email_address": "info@brand.coms",
           "shipping_message": "WE PAY SHIPPING ON ORDERS OVER $X",
           "header_bg_color": "#000000"
+        }
+      },
+      "banner": {
+        "type": "banner",
+        "settings": {
+          "reviews_text": "WITH 1600+ 5-STAR REVIEWS",
+          "stars": "★★★★★",
+          "headline_text": "Lorem ipsum dolor sit amet consectetur",
+          "subtext_text": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus",
+          "button_text": "View More",
+          "button_link": "\/"
+        }
+      },
+      "shop-by-collection": {
+        "type": "shop-by-collection",
+        "blocks": {
+          "collection_item_P8Me8k": {
+            "type": "collection_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/collection-1.png",
+              "text": "Coleção 1",
+              "alt_text": "Imagem da Coleção",
+              "link": ""
+            }
+          },
+          "collection_item_pF7Ctf": {
+            "type": "collection_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/collection-1.png",
+              "text": "Coleção 2",
+              "alt_text": "Imagem da Coleção",
+              "link": ""
+            }
+          },
+          "collection_item_qjPWKU": {
+            "type": "collection_item",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/collection-1.png",
+              "text": "Coleção 3",
+              "alt_text": "Imagem da Coleção",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "collection_item_P8Me8k",
+          "collection_item_pF7Ctf",
+          "collection_item_qjPWKU"
+        ],
+        "settings": {
+          "title": "Shop by Collection"
         }
       }
     },
