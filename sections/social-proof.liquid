@@ -1,0 +1,86 @@
+<div class="favorites-section">
+  <h2>{{ section.settings.title }}</h2>
+  <p>{{ section.settings.subtitle }}</p>
+  
+  <button >
+    {{ section.settings.button_text }}
+  </button>
+
+  <div class="reviews" >
+    {% for block in section.blocks %}
+    <div class="review-item" >
+      <img src="{{ block.settings.image_url }}" alt="Avatar">
+      <h3>{{ block.settings.name }}</h3>
+      <p>{{ block.settings.rating }} ⭐</p>
+      <p>{{ block.settings.comment }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Schema para administradores -->
+{% schema %}
+{
+  "name": "Cherished Favorites",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Cherished Favorites"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtítulo",
+      "default": "Explore the Harmony of Exceptional Quality and Customer Praise"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto do Botão",
+      "default": "View More"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avaliação",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nome do Avaliador",
+          "default": "John R."
+        },
+        {
+          "type": "image_picker",
+          "id": "image_url",
+          "label": "Foto do Avaliador"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Classificação (1-5)",
+          "min": 1,
+          "max": 5,
+          "step": 0.1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "comment",
+          "label": "Comentário",
+          "default": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Favoritos com Avaliações",
+      "category": "Seções Personalizadas"
+    }
+  ]
+}
+{% endschema %}
