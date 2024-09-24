@@ -19,7 +19,7 @@
           <div>
             <h3>{{ block.settings.name }}</h3>
             <p class="stars">
-              {% for i in (1..rating) %}
+              {% for i in (1..block.settings.rating) %}
                 <i class="fa-solid fa-star"></i>
               {% endfor %}
             </p>
