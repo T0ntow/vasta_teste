@@ -9,9 +9,8 @@
         </button>
 
         {% for block in section.blocks %}
-        <div class="collection-item">
+        <div class="collection-item" style="background-image: url('{{ block.settings.image | image_url }}');">
           <a href="{{ block.settings.link }}">
-            <img src="{{ block.settings.image | img_url: 'small' }}" alt="{{ block.settings.alt_text }}">
             <div class="collection-item-text">
               <h3>{{ block.settings.text }}</h3>
             </div>
@@ -26,6 +25,32 @@
     </div>
   </div>
 </section>
+
+<style>
+  .collection-item {
+    flex: 0 0 243px;
+    width: 243px;
+    height: 363px; /* Defina a altura */
+    position: relative;
+    border-radius: 13px;
+    overflow: hidden; /* Para garantir que o conteúdo não ultrapasse as bordas arredondadas */
+    /* Definindo o fundo com a imagem e o gradiente */
+    background-size: cover; /* Faz com que a imagem preencha o container */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+  }
+
+  .collection-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180.05deg, rgba(33, 33, 33, 0.0945) 16.36%, rgba(0, 0, 0, 0.504) 83.6%);
+    border-radius: 13px; /* Mantém o arredondamento das bordas */
+  }
+</style>
 
 {% schema %}
 {
