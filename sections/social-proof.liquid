@@ -1,6 +1,6 @@
 <div class="favorites-section">
   <h2>{{ section.settings.title }}</h2>
-  <p>{{ section.settings.subtitle }}</p>
+  <p id="subtitle">{{ section.settings.subtitle }}</p>
 
   <button>
     {{ section.settings.button_text }}
@@ -61,7 +61,7 @@
             "type": "text",
             "id": "name",
             "label": "Nome do Avaliador",
-            "default": "John R."
+            "default": "Nome do Avaliador"
           }, {
             "type": "image_picker",
             "id": "image_url",
