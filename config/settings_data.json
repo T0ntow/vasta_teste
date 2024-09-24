@@ -35,7 +35,7 @@
           "collection_item_P8Me8k": {
             "type": "collection_item",
             "settings": {
-              "image": "shopify://shop_images/collection-1.png",
+              "image": "shopify://shop_images/image-1.png",
               "text": "Coleção 1",
               "alt_text": "Imagem da Coleção",
               "link": ""
@@ -44,7 +44,7 @@
           "collection_item_pF7Ctf": {
             "type": "collection_item",
             "settings": {
-              "image": "shopify://shop_images/collection-1.png",
+              "image": "shopify://shop_images/image-2_0ee47b21-d02d-4e5c-a5a3-1fb69026c596.png",
               "text": "Coleção 2",
               "alt_text": "Imagem da Coleção",
               "link": ""
@@ -53,8 +53,26 @@
           "collection_item_qjPWKU": {
             "type": "collection_item",
             "settings": {
-              "image": "shopify://shop_images/collection-1.png",
+              "image": "shopify://shop_images/image-3.png",
               "text": "Coleção 3",
+              "alt_text": "Imagem da Coleção",
+              "link": ""
+            }
+          },
+          "collection_item_cNFQF8": {
+            "type": "collection_item",
+            "settings": {
+              "image": "shopify://shop_images/image-4.png",
+              "text": "Coleção 4",
+              "alt_text": "Imagem da Coleção",
+              "link": ""
+            }
+          },
+          "collection_item_U663c6": {
+            "type": "collection_item",
+            "settings": {
+              "image": "shopify://shop_images/image-5.png",
+              "text": "Coleção",
               "alt_text": "Imagem da Coleção",
               "link": ""
             }
@@ -63,7 +81,9 @@
         "block_order": [
           "collection_item_P8Me8k",
           "collection_item_pF7Ctf",
-          "collection_item_qjPWKU"
+          "collection_item_qjPWKU",
+          "collection_item_cNFQF8",
+          "collection_item_U663c6"
         ],
         "settings": {
           "title": "Shop by Collection"
@@ -91,26 +111,11 @@
               "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
             }
           },
-          "review_6rxHzR": {
+          "review_X38dNF": {
             "type": "review",
             "settings": {
               "name": "John R.",
-              "rating": 5,
-              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
-            }
-          },
-          "review_hLxMfD": {
-            "type": "review",
-            "settings": {
-              "name": "John R.",
-              "rating": 5,
-              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
-            }
-          },
-          "review_QkG9qX": {
-            "type": "review",
-            "settings": {
-              "name": "John R.",
+              "image_url": "shopify://shop_images/56d7a6082a98f87f6514f0bceda7a094.jpg",
               "rating": 5,
               "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
             }
@@ -118,9 +123,7 @@
         },
         "block_order": [
           "review_nzzEDJ",
-          "review_6rxHzR",
-          "review_hLxMfD",
-          "review_QkG9qX"
+          "review_X38dNF"
         ],
         "settings": {
           "title": "Cherished Favorites",
