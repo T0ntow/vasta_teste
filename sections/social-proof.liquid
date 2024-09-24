@@ -7,7 +7,7 @@
   </button>
 
   <div class="reviews">
-    {% for block in section.blocks %}
+    {% for block in section.blocks | limit: 2 %}
 
       <div class="review-item">
         <div class="container-persona">
