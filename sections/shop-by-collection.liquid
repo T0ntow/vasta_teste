@@ -3,50 +3,52 @@
   <div class="container">
     <h2>{{ section.settings.title }}</h2>
     <div class="collection-slider">
-      {% for block in section.blocks %}
-      <div class="collection-item">
-        <a href="{{ block.settings.link }}">
-          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.alt_text }}">
-          <div class="collection-item-text">
-            <h3>{{ block.settings.text }}</h3>
-          </div>
-        </a>
+      <div class="collection-items">
+        <button class="nav-button prev">
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+
+        {% for block in section.blocks %}
+        <div class="collection-item" style="background-image: url('{{ block.settings.image | image_url }}');">
+          <a href="{{ block.settings.link }}">
+            <div class="collection-item-text">
+              <h3>{{ block.settings.text }}</h3>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+        <button class="nav-button next">
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
       </div>
-      {% endfor %}
     </div>
   </div>
 </section>
 
 <style>
-  .shop-by-collection .container {
-    text-align: center;
-  }
-  .shop-by-collection h2 {
-    margin-bottom: 20px;
-  }
-  .collection-slider {
-    display: flex;
-    overflow-x: scroll;
-    gap: 20px;
-  }
   .collection-item {
-    flex: 0 0 200px;
+    flex: 0 0 243px;
+    width: 243px;
+    height: 363px; /* Defina a altura */
     position: relative;
+    border-radius: 13px;
+    overflow: hidden; /* Para garantir que o conteúdo não ultrapasse as bordas arredondadas */
+    /* Definindo o fundo com a imagem e o gradiente */
+    background-size: cover; /* Faz com que a imagem preencha o container */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
   }
-  .collection-item img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  .collection-item-text {
+
+  .collection-item::before {
+    content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180.05deg, rgba(33, 33, 33, 0.0945) 16.36%, rgba(0, 0, 0, 0.504) 83.6%);
+    border-radius: 13px; /* Mantém o arredondamento das bordas */
   }
 </style>
 
@@ -75,13 +77,13 @@
           "type": "text",
           "id": "text",
           "label": "Text",
-          "default": "Lorem Ipsum"
+          "default": "Coleção"
         },
         {
           "type": "text",
           "id": "alt_text",
           "label": "Alt Text",
-          "default": "Image Alt Text"
+          "default": "Imagem da Coleção"
         },
         {
           "type": "url",
@@ -98,5 +100,28 @@
     }
   ]
 }
-
 {% endschema %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const collectionSlider = document.querySelector('.collection-items');
+    const prevButton = document.querySelector('.nav-button.prev');
+    const nextButton = document.querySelector('.nav-button.next');
+
+    // Função para rolar para a esquerda
+    prevButton.addEventListener('click', function() {
+      collectionSlider.scrollBy({
+        left: -300, 
+        behavior: 'smooth'
+      });
+    });
+
+    // Função para rolar para a direita
+    nextButton.addEventListener('click', function() {
+      collectionSlider.scrollBy({
+        left: 300,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
