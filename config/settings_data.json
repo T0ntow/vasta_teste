@@ -90,10 +90,37 @@
               "rating": 5,
               "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
             }
+          },
+          "review_6rxHzR": {
+            "type": "review",
+            "settings": {
+              "name": "John R.",
+              "rating": 5,
+              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
+            }
+          },
+          "review_hLxMfD": {
+            "type": "review",
+            "settings": {
+              "name": "John R.",
+              "rating": 5,
+              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
+            }
+          },
+          "review_QkG9qX": {
+            "type": "review",
+            "settings": {
+              "name": "John R.",
+              "rating": 5,
+              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
+            }
           }
         },
         "block_order": [
-          "review_nzzEDJ"
+          "review_nzzEDJ",
+          "review_6rxHzR",
+          "review_hLxMfD",
+          "review_QkG9qX"
         ],
         "settings": {
           "title": "Cherished Favorites",
