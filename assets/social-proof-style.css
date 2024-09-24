@@ -31,7 +31,7 @@
 }
 
 /* Área de Avaliações */
-.reviews {
+.favorites-section .reviews {
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
