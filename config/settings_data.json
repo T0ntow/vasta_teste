@@ -26,7 +26,7 @@
           "headline_text": "Lorem ipsum dolor sit amet consectetur",
           "subtext_text": "Lorem ipsum dolor sit amet consectetur. Elit elementum rhoncus",
           "button_text": "View More",
-          "button_link": "\/"
+          "button_link": "/"
         }
       },
       "shop-by-collection": {
@@ -35,7 +35,7 @@
           "collection_item_P8Me8k": {
             "type": "collection_item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/collection-1.png",
+              "image": "shopify://shop_images/collection-1.png",
               "text": "Coleção 1",
               "alt_text": "Imagem da Coleção",
               "link": ""
@@ -44,7 +44,7 @@
           "collection_item_pF7Ctf": {
             "type": "collection_item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/collection-1.png",
+              "image": "shopify://shop_images/collection-1.png",
               "text": "Coleção 2",
               "alt_text": "Imagem da Coleção",
               "link": ""
@@ -53,7 +53,7 @@
           "collection_item_qjPWKU": {
             "type": "collection_item",
             "settings": {
-              "image": "shopify:\/\/shop_images\/collection-1.png",
+              "image": "shopify://shop_images/collection-1.png",
               "text": "Coleção 3",
               "alt_text": "Imagem da Coleção",
               "link": ""
@@ -67,6 +67,38 @@
         ],
         "settings": {
           "title": "Shop by Collection"
+        }
+      },
+      "uvps": {
+        "type": "uvps",
+        "settings": {
+          "section_title": "Shop Smarter, Shop With Vasta",
+          "text_1": "Lorem Ipsum Dolor Sit Amet Consectetur",
+          "text_2": "Lorem Ipsum Dolor Sit Amet Consectetur",
+          "text_3": "Lorem Ipsum Dolor Sit Amet Consectetur",
+          "text_4": "Lorem Ipsum Dolor Sit Amet Consectetur"
+        }
+      },
+      "social-proof": {
+        "type": "social-proof",
+        "blocks": {
+          "review_nzzEDJ": {
+            "type": "review",
+            "settings": {
+              "name": "John R.",
+              "image_url": "shopify://shop_images/873ac68aebe436f0d55d07b08c2901da.jpg",
+              "rating": 5,
+              "comment": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio"
+            }
+          }
+        },
+        "block_order": [
+          "review_nzzEDJ"
+        ],
+        "settings": {
+          "title": "Cherished Favorites",
+          "subtitle": "Explore the Harmony of Exceptional Quality and Customer Praise",
+          "button_text": "View More"
         }
       }
     },
