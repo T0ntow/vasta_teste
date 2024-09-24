@@ -111,6 +111,8 @@
     padding: 10px;
     text-align: center;
     font-size: 24px;
+
+    z-index: 100;
 }
 
 @media (max-width: 900px){
