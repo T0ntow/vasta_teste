@@ -9,13 +9,13 @@
         </button>
 
         {% for block in section.blocks %}
-        <div class="collection-item" style="background-image: url('{{ block.settings.image | image_url }}');">
-          <a href="{{ block.settings.link }}">
-            <div class="collection-item-text">
-              <h3>{{ block.settings.text }}</h3>
-            </div>
-          </a>
-        </div>
+          <div class="collection-item" style="background-image: url('{{ block.settings.image | image_url }}');">
+            <a href="{{ block.settings.link }}">
+              <div class="collection-item-text">
+                <h3>{{ block.settings.text }}</h3>
+              </div>
+            </a>
+          </div>
         {% endfor %}
 
         <button class="nav-button next">
@@ -30,14 +30,15 @@
   .collection-item {
     flex: 0 0 243px;
     width: 243px;
-    height: 363px; /* Defina a altura */
+    height: 363px;
     position: relative;
     border-radius: 13px;
-    overflow: hidden; /* Para garantir que o conteúdo não ultrapasse as bordas arredondadas */
-    /* Definindo o fundo com a imagem e o gradiente */
-    background-size: cover; /* Faz com que a imagem preencha o container */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
   }
 
   .collection-item::before {
@@ -48,58 +49,67 @@
     right: 0;
     bottom: 0;
     background: linear-gradient(180.05deg, rgba(33, 33, 33, 0.0945) 16.36%, rgba(0, 0, 0, 0.504) 83.6%);
-    border-radius: 13px; /* Mantém o arredondamento das bordas */
+    border-radius: 13px;
+    z-index: 1;
   }
+
+  .collection-item:hover::before {
+    background: linear-gradient(180.05deg, rgba(231, 231, 231, 0.095) 16.36%, rgba(138, 138, 138, 0.504) 83.6%);
+  }
+
+  .collection-item:hover .collection-item-text {
+    transition: all .3s ease;
+    color: #1f1f1f; /* Muda a cor do texto para preto */
+}
+
+
 </style>
 
 {% schema %}
-{
-  "name": "Shop by Collection",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Section Title",
-      "default": "Shop by Collection"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "collection_item",
-      "name": "Collection Item",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Coleção"
-        },
-        {
-          "type": "text",
-          "id": "alt_text",
-          "label": "Alt Text",
-          "default": "Imagem da Coleção"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Link"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Shop by Collection",
-      "category": "Custom Sections"
-    }
-  ]
-}
+  {
+    "name": "Shop by Collection",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Section Title",
+        "default": "Shop by Collection"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection_item",
+        "name": "Collection Item",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "Coleção"
+          }, {
+            "type": "text",
+            "id": "alt_text",
+            "label": "Alt Text",
+            "default": "Imagem da Coleção"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Shop by Collection",
+        "category": "Custom Sections"
+      }
+    ]
+  }
 {% endschema %}
 
 <script>
@@ -107,7 +117,7 @@
     const collectionSlider = document.querySelector('.collection-items');
     const prevButton = document.querySelector('.nav-button.prev');
     const nextButton = document.querySelector('.nav-button.next');
-
+  
     // Função para rolar para a esquerda
     prevButton.addEventListener('click', function() {
       collectionSlider.scrollBy({
@@ -115,7 +125,7 @@
         behavior: 'smooth'
       });
     });
-
+  
     // Função para rolar para a direita
     nextButton.addEventListener('click', function() {
       collectionSlider.scrollBy({
