@@ -1,34 +1,41 @@
 <div class="favorites-section">
-  <h2>{{ section.settings.title }}</h2>
-  <p id="subtitle">{{ section.settings.subtitle }}</p>
-
-  <button>
-    {{ section.settings.button_text }}
-  </button>
-
-  <div class="reviews">
-    {% for block in section.blocks %}
-      <div class="review-item">
-        <div class="container-persona">
-          <img
-            src="{{ block.settings.image_url | img_url: 'medium' }}"
-            alt="Avatar"
-            loading="lazy">
-
-          <div>
-            <h3>{{ block.settings.name }}</h3>
-            <p class="stars">
-              {% for i in (1..block.settings.rating) %}
-                <i class="fa-solid fa-star"></i>
-              {% endfor %}
-            </p>
+  <div>
+    <h2>{{ section.settings.title }}</h2>
+    <p id="subtitle">{{ section.settings.subtitle }}</p>
+    <button>
+      {{ section.settings.button_text }}
+    </button>
+    <div class="reviews">
+      {% for block in section.blocks %}
+        <div class="review-item">
+          <div class="container-persona">
+            <img
+              src="{{ block.settings.image_url | img_url: 'medium' }}"
+              alt="Avatar"
+              loading="lazy">
+            <div>
+              <h3>{{ block.settings.name }}</h3>
+              <p class="stars">
+                {% for i in (1..block.settings.rating) %}
+                  <i class="fa-solid fa-star"></i>
+                {% endfor %}
+              </p>
+            </div>
           </div>
+          <p>{{ block.settings.comment }}</p>
         </div>
-        <p>{{ block.settings.comment }}</p>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </div>
+
+<style>
+  .favorites-section {
+    background-image: url('{{ 'back-social-proof.png' | asset_url }}');
+  }
+
+
+</style>
 
 <!-- Schema para administradores -->
 {% schema %}

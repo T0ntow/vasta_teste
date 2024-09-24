@@ -5,6 +5,32 @@
     background-color: #111;
     color: #fff;
     min-height: 666px;
+    background-position: center center;
+    /* Posição padrão */
+
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.favorites-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: linear-gradient(73.01deg, #000000 34.28%, rgba(0, 0, 0, 0) 45.81%),
+        linear-gradient(0.21deg, #000000 9.2%, rgba(0, 0, 0, 0) 45.55%);
+    z-index: 1;
+}
+
+.favorites-section>div {
+    z-index: 100;
+    position: relative;
 }
 
 /* Título e Subtítulo */
@@ -52,6 +78,8 @@
     border-radius: 10px;
     margin: 20px;
     transition: transform 0.3s ease;
+
+    z-index: 100;
 }
 
 .review-item:hover {
@@ -110,7 +138,7 @@ p.comment {
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
     .favorites-section {
         padding: 120px 36px 97px 36px;
     }
@@ -157,13 +185,29 @@ p.comment {
     .review-item {
         margin-bottom: 30px;
     }
+
+    .favorites-section::before {
+        background: linear-gradient(180deg, #000000 26.79%, rgba(0, 0, 0, 0) 70.73%);
+    }
+
+
+    .favorites-section {
+        background-position: center 190px;
+    }
 }
 
 
 @media (max-width: 576px) {
     .favorites-section {
         padding: 74px 10px;
+        background-position: right 35% bottom 50%;
+        background-position-y: 200px;
     }
+
+    .favorites-section::before {
+        background: linear-gradient(180deg, #000000 24.48%, rgba(0, 0, 0, 0) 70.73%, #000000 103.2%);
+    }
+
 
     .favorites-section .reviews {
         margin-top: 85px;
