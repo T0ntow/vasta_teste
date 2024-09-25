@@ -26,7 +26,7 @@
     "blocks": [
       {
         "type": "link",
-        "name": "LinkDrop",
+        "name": "Navigation Link",
         "settings": [
           {
             "type": "text",
@@ -140,10 +140,10 @@
       </div>
 
       <nav id="burger-nav">
-        <ul>
-          {% for link in section.settings.navigation_links %}
+        <ul class="nav-list">
+          {% for block in section.blocks %}
             <li class="nav-item">
-              <a href="{{ link.link_url }}" class="nav-link">{{ link.link_text }}</a>
+              <a href="{{ block.settings.link_url }}" class="nav-link">{{ block.settings.link_text }}</a>
             </li>
           {% endfor %}
         </ul>
@@ -195,13 +195,14 @@
   <!-- Navigation menu -->
   <div class="navigation-menu">
     <ul class="nav-list">
-      {% for link in section.settings.navigation_links %}
+      {% for block in section.blocks %}
         <li class="nav-item">
-          <a href="{{ link.link_url }}" class="nav-link">{{ link.link_text }}</a>
+          <a href="{{ block.settings.link_url }}" class="nav-link">{{ block.settings.link_text }}</a>
         </li>
       {% endfor %}
     </ul>
   </div>
+
 </header>
 
 <script>
