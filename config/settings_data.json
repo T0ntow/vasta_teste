@@ -224,6 +224,66 @@
         "settings": {
           "title": "Best Selling Products"
         }
+      },
+      "reviews": {
+        "type": "reviews",
+        "blocks": {
+          "review_i7XJ3i": {
+            "type": "review",
+            "settings": {
+              "image": "shopify://shop_images/review1.png",
+              "name": "John Doe",
+              "country": "United States",
+              "rating": 5,
+              "description": "Lorem ipsum dolor sit amet.",
+              "product_name": "Product Name"
+            }
+          },
+          "review_iQ9itB": {
+            "type": "review",
+            "settings": {
+              "image": "shopify://shop_images/review2.png",
+              "name": "John Doe",
+              "country": "United States",
+              "rating": 5,
+              "description": "Lorem ipsum dolor sit amet.",
+              "product_name": "Product Name"
+            }
+          },
+          "review_VL9adi": {
+            "type": "review",
+            "settings": {
+              "image": "shopify://shop_images/review3.png",
+              "name": "John Doe",
+              "country": "United States",
+              "rating": 5,
+              "description": "Lorem ipsum dolor sit amet.",
+              "product_name": "Product Name"
+            }
+          },
+          "review_WczKVL": {
+            "type": "review",
+            "settings": {
+              "image": "shopify://shop_images/review4.png",
+              "name": "John Doe",
+              "country": "United States",
+              "rating": 5,
+              "description": "Lorem ipsum dolor sit amet.",
+              "product_name": "Product Name"
+            }
+          }
+        },
+        "block_order": [
+          "review_i7XJ3i",
+          "review_iQ9itB",
+          "review_VL9adi",
+          "review_WczKVL"
+        ],
+        "settings": {
+          "title": "Real Reviews, Real Experiences",
+          "subtitle": "With 1600+ 5-star reviews",
+          "total_pages": 30
+        }
       }
     },
     "content_for_index": [
