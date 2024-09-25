@@ -83,14 +83,6 @@
     margin-bottom: 20px;
 }
 
-.collection-slider {
-    display: flex;
-    overflow-x: scroll;
-    gap: 30px;
-
-    margin: 0 50px;
-}
-
 .collection-item {
     flex: 0 0 243px;
     width: 243px;
