@@ -1,0 +1,106 @@
+{% schema %}
+{
+  "name": "Real Reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Real Reviews, Real Experiences"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "With 1600+ 5-star reviews"
+    },
+    {
+      "type": "number",
+      "id": "total_pages",
+      "label": "Total Pages",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "John Doe"
+        },
+        {
+          "type": "text",
+          "id": "country",
+          "label": "Country",
+          "default": "United States"
+        },
+        {
+          "type": "number",
+          "id": "rating",
+          "label": "Rating",
+          "default": 5,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Review Text",
+          "default": "Lorem ipsum dolor sit amet."
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Product Name",
+          "default": "Product Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="reviews-section">
+  <h2>{{ section.settings.title }}</h2>
+  <p>{{ section.settings.subtitle }}</p>
+
+  <div class="reviews-list">
+    {% for review in section.blocks %}
+      <div class="review">
+        <img src="{{ review.settings.image | img_url: '500x500' }}" alt="{{ review.settings.name }}" class="review-image"/>
+        <h3>{{ review.settings.name }}</h3>
+        <p>{{ review.settings.country }}</p>
+        <div class="rating">
+          {% for i in (1..5) %}
+            {% if i <= review.settings.rating %}
+              <span>⭐</span>
+            {% else %}
+              <span>☆</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <p>{{ review.settings.description }}</p>
+        <p class="product">{{ review.settings.product_name }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="pagination">
+    <p>1 2 3 ... {{ section.settings.total_pages }}</p>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+.reviews-section {
+    text-align: center;
+}
+
+.reviews-section .reviews-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.reviews-section .review {
+    width: 23%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.reviews-section .review-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.reviews-section .rating {
+    margin: 10px 0;
+}
+
+.reviews-section .product {
+    font-weight: bold;
+}
