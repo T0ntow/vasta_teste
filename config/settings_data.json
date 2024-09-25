@@ -160,22 +160,12 @@
               "rating": 5,
               "total_reviews": 800
             }
-          },
-          "product_dkmLyz": {
-            "type": "product",
-            "settings": {
-              "image": "shopify://shop_images/img-product4.png",
-              "product_name": "Product Name",
-              "rating": 5,
-              "total_reviews": 800
-            }
           }
         },
         "block_order": [
           "product_6Xzptb",
           "product_ET4pVd",
-          "product_YCaAQB",
-          "product_dkmLyz"
+          "product_YCaAQB"
         ],
         "settings": {
           "title": "Best Selling Products"
