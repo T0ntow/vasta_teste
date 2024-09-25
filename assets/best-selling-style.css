@@ -86,10 +86,9 @@
     }
 }
 
-@media (max-width: 765px) {
+@media (max-width: 1000px) {
     .best-selling-products .product-grid {
-        padding: 0 20px;
-        grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
+        padding: 45px 20px;
     }
 
     .best-selling-products .product-card img {
