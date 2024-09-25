@@ -235,7 +235,7 @@
               "name": "John Doe",
               "country": "United States",
               "rating": 5,
-              "description": "Lorem ipsum dolor sit amet.",
+              "description": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio.",
               "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
@@ -247,7 +247,7 @@
               "name": "John Doe",
               "country": "United States",
               "rating": 5,
-              "description": "Lorem ipsum dolor sit amet.",
+              "description": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio.",
               "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
@@ -259,7 +259,7 @@
               "name": "John Doe",
               "country": "United States",
               "rating": 5,
-              "description": "Lorem ipsum dolor sit amet.",
+              "description": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio.",
               "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
@@ -271,7 +271,7 @@
               "name": "John Doe",
               "country": "United States",
               "rating": 5,
-              "description": "Lorem ipsum dolor sit amet.",
+              "description": "Lorem ipsum dolor sit amet consectetur. Volutpat fames diam volutpat a. Ultricies lacinia eu cras massa odio.",
               "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
