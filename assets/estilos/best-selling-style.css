@@ -96,15 +96,6 @@
         height: 387px;
     }
 
-
-    .best-selling-products h2 {
-        font-size: 28px;
-        line-height: 36px;
-
-        margin-top: 45px;
-        margin-bottom: 30px;
-    }
-
     .best-selling-products .product-card #product-info {
         padding: 20 15px;
     }
@@ -125,6 +116,15 @@
     }
 }
 
+@media (max-width: 900px){
+    .best-selling-products h2 {
+        font-size: 28px;
+        line-height: 36px;
+
+        margin-top: 45px;
+        margin-bottom: 30px;
+    }
+}
 
 @media (max-width: 650px) {
     .best-selling-products .product-grid {

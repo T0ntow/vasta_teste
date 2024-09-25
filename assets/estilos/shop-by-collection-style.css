@@ -113,6 +113,7 @@
     font-weight: 700;
     font-size: 36px;
     margin-bottom: 20px;
+    line-height: 43px;
 }
 
 .collection-item {
@@ -151,6 +152,21 @@
     
 }
 
+@media (max-width: 900px){
+    .shop-by-collection h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 36px;
+    }
+}
+
+@media (max-width: 650px){
+    .shop-by-collection h2 {
+        font-size: 24px;
+        line-height: 28px;
+      }
+}
+
 @media (max-width: 500px){
     .shop-by-collection {
         min-height: 398px;
@@ -175,5 +191,6 @@
     
         cursor: pointer;
     }
-    
 }
+
+

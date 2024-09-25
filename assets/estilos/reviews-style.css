@@ -224,12 +224,6 @@
         grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
     }
 
-    .reviews-section h2 {
-        margin-top: 40px;
-        font-size: 24px;
-        line-height: 28px;
-    }
-
     .reviews-section #subtitle {
         font-size: 14px;
         line-height: 20px;
@@ -262,7 +256,11 @@
         gap: 21px;
         justify-content: center;
     }
-
+    .reviews-section h2 {
+        margin-top: 40px;
+        font-size: 24px;
+        line-height: 28px;
+    }
 
     .reviews-section .reviews-list .review {
         min-height: 400px;
