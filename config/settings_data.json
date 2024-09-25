@@ -12,6 +12,50 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "link_xRkVYV": {
+            "type": "link",
+            "settings": {
+              "link_text": "Lorem Ipsum",
+              "link_url": ""
+            }
+          },
+          "link_BeyhPR": {
+            "type": "link",
+            "settings": {
+              "link_text": "Lorem Ipsum",
+              "link_url": ""
+            }
+          },
+          "link_9EHzTC": {
+            "type": "link",
+            "settings": {
+              "link_text": "Lorem Ipsum",
+              "link_url": ""
+            }
+          },
+          "link_mJzePq": {
+            "type": "link",
+            "settings": {
+              "link_text": "Lorem Ipsum",
+              "link_url": ""
+            }
+          },
+          "link_CYjyQW": {
+            "type": "link",
+            "settings": {
+              "link_text": "ALL",
+              "link_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "link_xRkVYV",
+          "link_BeyhPR",
+          "link_9EHzTC",
+          "link_mJzePq",
+          "link_CYjyQW"
+        ],
         "settings": {
           "email_address": "info@brand.coms",
           "shipping_message": "WE PAY SHIPPING ON ORDERS OVER $X",
