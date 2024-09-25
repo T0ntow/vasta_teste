@@ -80,7 +80,13 @@
 
 <section class="reviews-section">
   <h2>{{ section.settings.title }}</h2>
-  <p>{{ section.settings.subtitle }}</p>
+  <p id="subtitle">
+    {{ section.settings.subtitle }}
+
+    {% for i in (1..5) %}
+      <i class="fa-solid fa-star"></i>
+    {% endfor %}
+  </p>
 
   <div class="reviews-list">
     {% for review in section.blocks %}

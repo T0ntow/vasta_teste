@@ -1,17 +1,47 @@
 .reviews-section {
     text-align: center;
+    padding: 0 250px;
+    min-height: 654px;
 }
+
+.reviews-section .pagination {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.08em;
+    text-align: center;
+
+    color: Gray;
+}
+
+.reviews-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 43.2px;
+    text-align: center;
+}
+
+.reviews-section #subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17.6px;
+    text-align: center;
+}
+
 
 .reviews-section .reviews-list {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+
+    margin-top: 35px;
 }
 
 .reviews-section .reviews-list .review {
     width: 216px;
     height: 511px;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Conteudo do card */
@@ -41,11 +71,14 @@
     margin: 10px 0;
 }
 
-/* Review Country */
+/* Descrição */
 .content #description {
     font-size: 14px;
     font-weight: 400;
     line-height: 15.4px;
+
+    margin-bottom: 20px;
+    color: #252525;
 }
 
 
@@ -55,7 +88,7 @@
 }
 
 .reviews-section .reviews-list .review-image {
-    width: 215.21px;
+    width: 100%;
     height: 306px;
     left: 0.36px;
     gap: 0px;
@@ -66,9 +99,11 @@
 
 
 .reviews-section .reviews-list .product {
-    width: 145px;
     height: 28px;
     gap: 10px;
+
+    display: flex;
+    align-items: center;
 }
 
 .reviews-section .reviews-list .product p {
@@ -76,9 +111,204 @@
     font-weight: 500;
     line-height: 12px;
     letter-spacing: 0.02em;
+    color: #252525;
 }
 
 .reviews-section .reviews-list .product img {
     width: 38px;
     height: 28px;
+
+    object-fit: cover;
+}
+
+@media (max-width: 1415px) {
+    .reviews-section {
+        padding: 0 100px;
+    }
+
+    .reviews-section .reviews-list {
+        grid-template-columns: repeat(2, minmax(250px, 2fr));
+        justify-content: center;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .reviews-section h2 {
+        margin-top: 45px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .reviews-section {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 1135px) {
+    .reviews-section {
+        padding: 0 20px;
+    }
+
+    .reviews-section h2 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .reviews-section .reviews-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas com tamanhos iguais */
+        grid-template-rows: repeat(2, 1fr);
+        /* 2 linhas com tamanhos iguais */
+        gap: 48px;
+        /* Espaçamento entre os itens */
+    }
+
+    .reviews-section .reviews-list .review {
+        width: 340px;
+        min-height: 804px;
+        max-height: 804px;
+
+        padding: 0px 0.68px 23.73px 0.56px;
+        gap: 0px;
+        border-radius: 12.6px 0px 0px 0px;
+        opacity: 0px;
+
+        margin: auto;
+    }
+
+    .reviews-section .reviews-list .review-image {
+        width: 338.76px;
+        height: 481.46px;
+        left: 0.56px;
+        gap: 0px;
+        border-radius: 12.6px 12.6px 0px 0px;
+        border: 1.58px 0px 0px 0px;
+        opacity: 0px;
+    }
+
+    .content #description {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
+    .reviews-section .reviews-list .review .content h3 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    /* Review Country */
+    .reviews-section .reviews-list .review .content h4 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .reviews-section .reviews-list .product p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 18px;
+    }
+
+    .reviews-section .reviews-list .product img {
+        width: 59.86px;
+        height: 44.11px;
+    }
+
+}
+
+@media (max-width: 765px) {
+    .reviews-section .reviews-list {
+        gap: 21px;
+        grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
+    }
+
+    .reviews-section h2 {
+        margin-top: 40px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .reviews-section #subtitle {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .reviews-section .reviews-list .review {
+        min-height: 600px;
+        width: 40vw;
+        padding: 0px 0.68px 23.73px 0.56px;
+        gap: 0px;
+        opacity: 0px;
+
+        margin: auto;
+    }
+
+    .reviews-section .reviews-list .review-image {
+        height: 330px;
+        width: 100%;
+        left: 0.21px;
+        gap: 0px;
+        border-radius: 5.83px 5.83px 0px 0px;
+        border: 0.73px 0px 0px 0px;
+    }
+}
+
+@media (max-width: 650px) {
+    .reviews-section .reviews-list {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 21px;
+        justify-content: center;
+    }
+
+
+    .reviews-section .reviews-list .review {
+        min-height: 500px;
+    }
+
+    .reviews-section .reviews-list .review-image {
+        height: 223.14px;
+    }
+
+    .content #description {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+        letter-spacing: 0.035em;
+    }
+
+    .reviews-section .reviews-list .review .content h3 {
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+
+    /* Review Country */
+    .reviews-section .reviews-list .review .content h4 {
+        font-size: 13.13px;
+        line-height: 12px;
+    }
+
+    /* Avaliação (estrelas) */
+    .reviews-section .reviews-list .review .content .rating {
+        margin: 0 0 5px 0;
+    }
+
+    /* Avaliação (estrelas) */
+    .reviews-section .reviews-list .review .content .rating i {
+        font-size: 10px;
+    }
+
+    .reviews-section .reviews-list .product p {
+        font-size: 10px;
+        line-height: 10px;
+    }
+
+    .reviews-section .reviews-list .product img {
+        width: 39.3px;
+        height: 20.42px;
+    }
+
 }
