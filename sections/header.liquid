@@ -1,32 +1,29 @@
 {% schema %}
-{
-  "name": "Header Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "email_address",
-      "label": "Email Address",
-      "default": "info@brandssss.com"
-    },
-    {
-      "type": "text",
-      "id": "shipping_message",
-      "label": "Shipping Message",
-      "default": "WE PAY SHIPPING ON ORDERS OVER $X"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo_image",
-      "label": "Logo"
-    },
-    {
-      "type": "color",
-      "id": "header_bg_color",
-      "label": "Header Background Color",
-      "default": "#000000"
-    }
-  ]
-}
+  {
+    "name": "Header Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "email_address",
+        "label": "Email Address",
+        "default": "info@brandssss.com"
+      }, {
+        "type": "text",
+        "id": "shipping_message",
+        "label": "Shipping Message",
+        "default": "WE PAY SHIPPING ON ORDERS OVER $X"
+      }, {
+        "type": "image_picker",
+        "id": "logo_image",
+        "label": "Logo"
+      }, {
+        "type": "color",
+        "id": "header_bg_color",
+        "label": "Header Background Color",
+        "default": "#000000"
+      }
+    ]
+  }
 {% endschema %}
 
 <header>
@@ -36,16 +33,16 @@
       <!-- Email -->
       <div>
         <a href="mailto:{{ section.settings.email_address }}" class="contact-link">
-          <i class="fa fa-envelope"></i> 
+          <i class="fa fa-envelope"></i>
           <span id="email-adress">
-          {{ section.settings.email_address }}
+            {{ section.settings.email_address }}
           </span>
         </a>
       </div>
       <div class="contact-link">{{ section.settings.shipping_message }}</div>
       <div>
         <a href="tel:+11112223333" class="contact-link">
-          <i class="fa fa-phone"></i> 
+          <i class="fa fa-phone"></i>
           <span id="phone">
             +1 (111) 222-3333
           </span>
@@ -59,15 +56,27 @@
     <!-- Logo -->
     <div class="logo">
       <a href="/">
-        <img src="{{ 'logoDark.png' | asset_url }}" alt="Vasta Logo" width="140" height="42" class="logo-img">
+        <img
+          src="{{ 'logoDark.png' | asset_url }}"
+          alt="Vasta Logo"
+          width="140"
+          height="42"
+          class="logo-img">
       </a>
     </div>
 
     <!-- Search bar -->
     <div class="search-bar">
-      <form action="/search" method="get" role="search" class="search-form">
+      <form
+        action="/search"
+        method="get"
+        role="search"
+        class="search-form">
         <div class="search-input-container">
-          <input type="text" name="search" placeholder="Search Lorem Ipsum">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search Lorem Ipsum">
           <button type="submit" class="search-button">
             Search
             <i class="fa fa-search"></i>
@@ -84,19 +93,50 @@
       </a>
       <span>CART</span>
     </div>
-  </div> 
+  </div>
 
   <!-- Main header to mobile -->
   <div class="mobile-style">
     <div class="container-top">
-      <div class="menu">
-        <i class="fa fa-bars"></i>
+      <div class="menu icon" id="burger-icon">
+        <i class="fa fa-bars" id="burger-icon-display"></i>
+        <i
+          class="fa fa-times"
+          id="burger-icon-close"
+          style="display:none;"></i>
         <span>Menu</span>
       </div>
 
+      <nav id="burger-nav">
+        <ul >
+          <li>
+            <a href="#">Lorem Ipsum</a>
+          </li>
+          <li>
+            <a href="#">Lorem Ipsum</a>
+          </li>
+          <li>
+            <a href="#">Lorem Ipsum</a>
+          </li>
+          <li>
+            <a href="#">Lorem Ipsum</a>
+          </li>
+          <li>
+            <a href="#">All</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="dark-blue" id="blue"></div>
+
       <div class="logo">
         <a href="/">
-          <img src="{{ 'logoDark.png' | asset_url }}" alt="Vasta Logo" width="140" height="42" class="logo-img">
+          <img
+            src="{{ 'logoDark.png' | asset_url }}"
+            alt="Vasta Logo"
+            width="140"
+            height="42"
+            class="logo-img">
         </a>
       </div>
       <!-- Cart icon -->
@@ -109,11 +149,18 @@
       </div>
     </div>
 
-     <!-- Search bar -->
-     <div class="search-bar">
-      <form action="/search" method="get" role="search" class="search-form">
+    <!-- Search bar -->
+    <div class="search-bar">
+      <form
+        action="/search"
+        method="get"
+        role="search"
+        class="search-form">
         <div class="search-input-container">
-          <input type="text" name="search" placeholder="Search Lorem Ipsum">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search Lorem Ipsum">
           <button type="submit" class="search-button">
             Search
             <i class="fa fa-search"></i>
@@ -144,3 +191,39 @@
     </ul>
   </nav>
 </header>
+
+<script>
+   document.getElementById('burger-icon').addEventListener('click', function() {
+    const nav = document.getElementById('burger-nav');
+    const iconDisplay = document.getElementById('burger-icon-display');
+    const iconClose = document.getElementById('burger-icon-close');
+
+    const menuIcon = document.getElementById('burger-icon');
+  
+    nav.classList.toggle('show');
+    document.getElementById("blue").classList.toggle('slide');
+  
+    // Toggle icon
+    if (nav.classList.contains('show')) {
+      iconDisplay.style.display = 'none';
+      iconClose.style.display = 'inline';
+      menuIcon.classList.add("white")
+    } else {
+      iconDisplay.style.display = 'inline';
+      iconClose.style.display = 'none';
+      menuIcon.classList.remove("white")
+
+    }
+  });
+  
+  // Fechar o menu ao clicar em um item do menu
+  const menuItems = document.querySelectorAll('.nav-item a');
+  menuItems.forEach(item => {
+    item.addEventListener('click', function() {
+      document.getElementById('burger-nav').classList.remove('show');
+      document.getElementById("blue").classList.remove('slide');
+      document.getElementById('burger-icon-display').style.display = 'inline';
+      document.getElementById('burger-icon-close').style.display = 'none';
+    });
+  });
+</script>
