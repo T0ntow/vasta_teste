@@ -288,6 +288,56 @@
           "subtitle": "With 1600+ 5-star reviews",
           "total_pages": 30
         }
+      },
+      "best-selling2": {
+        "type": "best-selling2",
+        "blocks": {
+          "product_bRcHqE": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/best-selling1.png",
+              "product_name": "Product Name",
+              "rating": 5,
+              "total_reviews": 800
+            }
+          },
+          "product_HbeVVK": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/best-selling2.png",
+              "product_name": "Product Name",
+              "rating": 5,
+              "total_reviews": 800
+            }
+          },
+          "product_XP7YkF": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/best-selling3.png",
+              "product_name": "Product Name",
+              "rating": 5,
+              "total_reviews": 800
+            }
+          },
+          "product_xYAqiD": {
+            "type": "product",
+            "settings": {
+              "image": "shopify://shop_images/best-selling4.png",
+              "product_name": "Product Name",
+              "rating": 5,
+              "total_reviews": 800
+            }
+          }
+        },
+        "block_order": [
+          "product_bRcHqE",
+          "product_HbeVVK",
+          "product_XP7YkF",
+          "product_xYAqiD"
+        ],
+        "settings": {
+          "title": "You May Also Like"
+        }
       }
     },
     "content_for_index": [
