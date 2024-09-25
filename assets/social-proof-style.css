@@ -5,12 +5,9 @@
     background-color: #111;
     color: #fff;
     min-height: 666px;
-    background-position: center center;
-    /* Posição padrão */
-
+    background-position: 300px 40%;
 
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     position: relative;
 }
@@ -141,7 +138,8 @@ p.comment {
 @media (max-width: 1250px) {
     .favorites-section {
         padding: 120px 36px 97px 36px;
-    }
+        background-position: center center;   
+     }
 
     .review-item {
         margin: 20px 0;
