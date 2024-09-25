@@ -25,23 +25,23 @@
           <input
             type="text"
             name="email"
-            placeholder="Enter Email Address">
+            placeholder="{{ section.settings.email_placeholder }}">
           <button type="submit" class="search-button">
-            Give Me 15% OFF
+            {{ section.settings.email_button_text }}
           </button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Popular Collections Section -->
-  <div class="popular-collections">
-    <h4>{{ section.settings.contact_text }}</h4>
+  <!-- Shop by Collection Section -->
+  <div class="shop-by-collection">
+    <h4>{{ section.settings.shop_by_collection_text }}</h4>
     <div class="collection-list">
       {% for block in section.blocks %}
         <div class="collection-item">
-          <a href="{{ block.settings.collection_url }}">
-            <img src="{{ block.settings.collection_image | img_url: 'medium' }}" alt="{{ block.settings.collection_title }}">
+          <a href="{{ block.settings.collection | url }}">
+            <img src="{{ block.settings.collection | img_url: 'medium' }}" alt="{{ block.settings.collection_title }}">
             <p>{{ block.settings.collection_title }}</p>
           </a>
         </div>
@@ -73,69 +73,81 @@
 </section>
 
 {% schema %}
-  {
-    "name": "Custom Footer Section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "email_coupon_text",
-        "label": "Email Coupon Text",
-        "default": "Enter Your Email To Receive 15% Coupon Immediately"
-      },
-      {
-        "type": "text",
-        "id": "email_placeholder",
-        "label": "Email Input Placeholder",
-        "default": "Enter Email Address"
-      },
-      {
-        "type": "text",
-        "id": "email_button_text",
-        "label": "Email Button Text",
-        "default": "Give Me 15% OFF"
-      },
-      {
-        "type": "text",
-        "id": "contact_text",
-        "label": "Contact Text",
-        "default": "Get In Contact"
-      },
-      {
-        "type": "link_list",
-        "id": "footer_links",
-        "label": "Footer Links"
-      },
-      {
-        "type": "image_picker",
-        "id": "payment_icons",
-        "label": "Payment Icons"
-      },
-      {
-        "type": "text",
-        "id": "copyright_text",
-        "label": "Copyright Text",
-        "default": "All Rights Reserved."
-      }
-    ],
-    "blocks": [
-      {
-        "type": "collection",
-        "name": "Collection",
-        "settings": [
-          {
-            "type": "collection",
-            "id": "collection",
-            "label": "Select Collection"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Custom Footer Section",
-        "category": "Footer"
-      }
-    ],
-    "max_blocks": 4
-  }
-  {% endschema %}
+{
+  "name": "Custom Footer Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "email_coupon_text",
+      "label": "Email Coupon Text",
+      "default": "Enter Your Email To Receive 15% Coupon Immediately"
+    },
+    {
+      "type": "text",
+      "id": "email_placeholder",
+      "label": "Email Input Placeholder",
+      "default": "Enter Email Address"
+    },
+    {
+      "type": "text",
+      "id": "email_button_text",
+      "label": "Email Button Text",
+      "default": "Give Me 15% OFF"
+    },
+    {
+      "type": "text",
+      "id": "contact_text",
+      "label": "Contact Text",
+      "default": "Get In Contact"
+    },
+    {
+      "type": "text",
+      "id": "shop_by_collection_text",
+      "label": "Shop by Collection Section Title",
+      "default": "Shop by Collection"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_links",
+      "label": "Footer Links"
+    },
+    {
+      "type": "image_picker",
+      "id": "payment_icons",
+      "label": "Payment Icons"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "All Rights Reserved."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_title",
+          "label": "Collection Title",
+          "default": "Collection Name"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer Section",
+      "category": "Footer"
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}
