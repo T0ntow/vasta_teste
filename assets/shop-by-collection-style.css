@@ -1,5 +1,10 @@
+.shop-by-collection {
+    min-height: 518px;
+}
+
 .shop-by-collection .container {
     text-align: center;
+    margin: 0 163px;
 }
 
 .collection-slider {
@@ -8,14 +13,41 @@
     align-items: center;
 }
 
-.collection-items {
-    display: flex;
-    overflow-x: auto;
-    gap: 30px;
-}
-
 .collection-item {
     position: relative;
+
+    flex: 0 0 243px;
+    width: 243px;
+    height: 363px;
+    position: relative;
+    border-radius: 13px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+}
+
+.collection-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180.05deg, rgba(33, 33, 33, 0.0945) 16.36%, rgba(0, 0, 0, 0.504) 83.6%);
+    border-radius: 13px;
+    z-index: 1;
+  }
+
+  .collection-item:hover::before {
+    background: linear-gradient(180.05deg, rgba(231, 231, 231, 0.095) 16.36%, rgba(138, 138, 138, 0.504) 83.6%);
+  }
+
+  .collection-item:hover .collection-item-text {
+    transition: all .3s ease;
+    color: #1f1f1f; /* Muda a cor do texto para preto */
 }
 
 .nav-button {
@@ -48,7 +80,7 @@
 .collection-slider {
     display: flex;
     align-items: center;
-    overflow-x: auto;
+    overflow-x: hidden;
     gap: 20px;
 }
 
@@ -72,7 +104,7 @@
 
 .collection-items {
     display: flex;
-    overflow-x: auto;
+    overflow-x: hidden;
     gap: 20px;
 }
 
@@ -107,14 +139,41 @@
     z-index: 100;
 }
 
-@media (max-width: 900px){
+@media (max-width: 1200px){
     .collection-slider {
         margin: 0 20px;
     }
+
+    .shop-by-collection .container {
+        text-align: center;
+        margin: 0 20px;
+    }
+    
 }
 
 @media (max-width: 500px){
+    .shop-by-collection {
+        min-height: 398px;
+    }
+
     .collection-item-text {
         font-size: 20px;
     }
+
+    .collection-item {
+        position: relative;
+    
+        flex: 0 0 188px;
+        width: 188px;
+        height: 280px;
+        position: relative;
+        border-radius: 13px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+        cursor: pointer;
+    }
+    
 }
