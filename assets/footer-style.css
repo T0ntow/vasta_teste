@@ -1,0 +1,79 @@
+.footer-container {
+    background-color: #17171A;
+    height: 613px;
+
+    padding: 65px 135px;
+
+    color: #fff;
+}
+
+.footer-container .logo {
+    margin-bottom: 34px;
+}
+
+.footer-container .logo .logo-img {
+    width: 169px;
+    height: 50px;
+}
+
+/* email-coupon */
+.email-coupon p {
+    margin-bottom: 12px;
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+}
+
+/* Email */
+.email-coupon .search-bar {
+    flex-grow: 2;
+    max-width: 600px;
+
+    padding: 0;
+}
+
+.email-coupon .search-form {
+    display: flex;
+    align-items: center;
+}
+
+.email-coupon .search-input-container {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.email-coupon .search-input-container input {
+    width: 100%;
+    border-radius: 25px;
+    border: 1px solid #F5F6FA;
+    height: 46px;
+    text-indent: 15px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.email-coupon .search-button {
+    background-color: #00AC4F;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #F5F6FA;
+    border-radius: 66.58px;
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: 197px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+
+    color: #fff;
+    font-weight: 400;
+}
+
+.email-coupon .search-button:hover {
+    color: #fff;
+    font-weight: bold;
+    background-color: #17171A;
+}

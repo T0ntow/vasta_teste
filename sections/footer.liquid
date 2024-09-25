@@ -1,0 +1,141 @@
+<!-- Custom Footer Section -->
+<section class="footer-container">
+  <!-- Logo -->
+  <div class="logo">
+    <a href="/">
+      <img
+        src="{{ 'logoLight.png' | asset_url }}"
+        alt="Vasta Logo"
+        width="140"
+        height="42"
+        class="logo-img">
+    </a>
+  </div>
+
+  <!-- Email Coupon Section -->
+  <div class="email-coupon">
+    <p>{{ section.settings.email_coupon_text }}</p>
+    <!-- Search bar -->
+    <div class="search-bar">
+      <form
+        action="/submit-email"
+        method="POST"
+        class="email-form">
+        <div class="search-input-container">
+          <input
+            type="text"
+            name="email"
+            placeholder="Enter Email Address">
+          <button type="submit" class="search-button">
+            Give Me 15% OFF
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Popular Collections Section -->
+  <div class="popular-collections">
+    <h4>{{ section.settings.contact_text }}</h4>
+    <div class="collection-list">
+      {% for block in section.blocks %}
+        <div class="collection-item">
+          <a href="{{ block.settings.collection_url }}">
+            <img src="{{ block.settings.collection_image | img_url: 'medium' }}" alt="{{ block.settings.collection_title }}">
+            <p>{{ block.settings.collection_title }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    {% for link in section.settings.footer_links %}
+      <a href="{{ link.link_url }}">{{ link.link_text }}</a>
+    {% endfor %}
+  </div>
+
+  <!-- Contact Information -->
+  <div class="footer-contact">
+    <p>{{ section.settings.contact_text }}</p>
+    <p>{{ shop.phone }} | {{ shop.email }} | {{ shop.address }}</p>
+  </div>
+
+  <!-- Payment Icons -->
+  <div class="payment-icons">
+    {% for payment_icon in section.settings.payment_icons %}
+      <img src="{{ payment_icon.image | img_url: 'small' }}" alt="{{ payment_icon.name }}">
+    {% endfor %}
+  </div>
+
+  <p>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}. {{ section.settings.copyright_text }}</p>
+</section>
+
+{% schema %}
+  {
+    "name": "Custom Footer Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "email_coupon_text",
+        "label": "Email Coupon Text",
+        "default": "Enter Your Email To Receive 15% Coupon Immediately"
+      },
+      {
+        "type": "text",
+        "id": "email_placeholder",
+        "label": "Email Input Placeholder",
+        "default": "Enter Email Address"
+      },
+      {
+        "type": "text",
+        "id": "email_button_text",
+        "label": "Email Button Text",
+        "default": "Give Me 15% OFF"
+      },
+      {
+        "type": "text",
+        "id": "contact_text",
+        "label": "Contact Text",
+        "default": "Get In Contact"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_links",
+        "label": "Footer Links"
+      },
+      {
+        "type": "image_picker",
+        "id": "payment_icons",
+        "label": "Payment Icons"
+      },
+      {
+        "type": "text",
+        "id": "copyright_text",
+        "label": "Copyright Text",
+        "default": "All Rights Reserved."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Select Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Footer Section",
+        "category": "Footer"
+      }
+    ],
+    "max_blocks": 4
+  }
+  {% endschema %}
