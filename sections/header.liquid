@@ -7,126 +7,158 @@
         "id": "email_address",
         "label": "Email Address",
         "default": "info@brandssss.com"
-      },
-      {
+      }, {
         "type": "text",
         "id": "shipping_message",
         "label": "Shipping Message",
         "default": "WE PAY SHIPPING ON ORDERS OVER $X"
-      },
-      {
+      }, {
         "type": "image_picker",
         "id": "logo_image",
         "label": "Logo"
-      },
-      {
+      }, {
         "type": "color",
         "id": "header_bg_color",
         "label": "Header Background Color",
         "default": "#000000"
-      },
+      }
+    ],
+    "blocks": [
       {
-        "type": "list",
-        "id": "navigation_links",
-        "label": "Navigation Links",
-        "default": [
-          {
-            "link_text": "Lorem Ipsum",
-            "link_url": "#"
-          },
-          {
-            "link_text": "Lorem Ipsum",
-            "link_url": "#"
-          },
-          {
-            "link_text": "Lorem Ipsum",
-            "link_url": "#"
-          },
-          {
-            "link_text": "Lorem Ipsum",
-            "link_url": "#"
-          },
-          {
-            "link_text": "All",
-            "link_url": "#"
-          }
-        ],
+        "type": "link",
+        "name": "LinkDrop",
         "settings": [
           {
             "type": "text",
             "id": "link_text",
             "label": "Link Text"
-          },
-          {
+          }, {
             "type": "url",
             "id": "link_url",
             "label": "Link URL"
           }
         ]
       }
+    ],
+    "presets": [
+      {
+        "name": "Default Header",
+        "blocks": [
+          {
+            "type": "link"
+          }, {
+            "type": "link"
+          }, {
+            "type": "link"
+          }
+        ]
+      }
     ]
   }
-  {% endschema %}
-  
-  <header>
-    <!-- Top bar with contact and shipping info -->
-    <div class="header-top-bar">
-      <div class="header-top-bar-content">
-        <!-- Email -->
-        <div>
-          <a href="mailto:{{ section.settings.email_address }}" class="contact-link">
-            <i class="fa fa-envelope"></i>
-            <span id="email-adress">
-              {{ section.settings.email_address }}
-            </span>
-          </a>
-        </div>
-        <div class="contact-link">{{ section.settings.shipping_message }}</div>
-        <div>
-          <a href="tel:+11112223333" class="contact-link">
-            <i class="fa fa-phone"></i>
-            <span id="phone">
-              +1 (111) 222-3333
-            </span>
-          </a>
-        </div>
+
+{% endschema %}
+
+<header>
+  <!-- Top bar with contact and shipping info -->
+  <div class="header-top-bar">
+    <div class="header-top-bar-content">
+      <!-- Email -->
+      <div>
+        <a href="mailto:{{ section.settings.email_address }}" class="contact-link">
+          <i class="fa fa-envelope"></i>
+          <span id="email-adress">
+            {{ section.settings.email_address }}
+          </span>
+        </a>
+      </div>
+      <div class="contact-link">{{ section.settings.shipping_message }}</div>
+      <div>
+        <a href="tel:+11112223333" class="contact-link">
+          <i class="fa fa-phone"></i>
+          <span id="phone">
+            +1 (111) 222-3333
+          </span>
+        </a>
       </div>
     </div>
-  
-    <!-- Main header with logo, search bar, and cart -->
-    <div class="main-header">
-      <!-- Logo -->
+  </div>
+
+  <!-- Main header with logo, search bar, and cart -->
+  <div class="main-header">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/">
+        <img
+          src="{{ 'logoDark.png' | asset_url }}"
+          alt="Vasta Logo"
+          width="140"
+          height="42"
+          class="logo-img">
+      </a>
+    </div>
+
+    <!-- Search bar -->
+    <div class="search-bar">
+      <form
+        action="/search"
+        method="get"
+        role="search"
+        class="search-form">
+        <div class="search-input-container">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search Lorem Ipsum">
+          <button type="submit" class="search-button">
+            Search
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Cart icon -->
+    <div class="cart">
+      <a href="/cart" class="cart-link">
+        <i class="fa fa-shopping-cart cart-icon"></i>
+        <span class="cart-count">{{ cart.item_count }}</span>
+      </a>
+      <span>CART</span>
+    </div>
+  </div>
+
+  <!-- Main header to mobile -->
+  <div class="mobile-style">
+    <div class="container-top">
+      <div class="menu icon" id="burger-icon">
+        <i class="fa fa-bars" id="burger-icon-display"></i>
+        <i
+          class="fa fa-times"
+          id="burger-icon-close"
+          style="display:none;"></i>
+        <span>Menu</span>
+      </div>
+
+      <nav id="burger-nav">
+        <ul>
+          {% for link in section.settings.navigation_links %}
+            <li class="nav-item">
+              <a href="{{ link.link_url }}" class="nav-link">{{ link.link_text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
       <div class="logo">
         <a href="/">
           <img
-          src="{{ 'logoDark.png' | asset_url }}"
+            src="{{ 'logoDark.png' | asset_url }}"
             alt="Vasta Logo"
             width="140"
             height="42"
             class="logo-img">
         </a>
       </div>
-  
-      <!-- Search bar -->
-      <div class="search-bar">
-        <form
-          action="/search"
-          method="get"
-          role="search"
-          class="search-form">
-          <div class="search-input-container">
-            <input
-              type="text"
-              name="search"
-              placeholder="Search Lorem Ipsum">
-            <button type="submit" class="search-button">
-              Search
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
-  
       <!-- Cart icon -->
       <div class="cart">
         <a href="/cart" class="cart-link">
@@ -136,85 +168,43 @@
         <span>CART</span>
       </div>
     </div>
-  
-    <!-- Main header to mobile -->
-    <div class="mobile-style">
-      <div class="container-top">
-        <div class="menu icon" id="burger-icon">
-          <i class="fa fa-bars" id="burger-icon-display"></i>
-          <i
-            class="fa fa-times"
-            id="burger-icon-close"
-            style="display:none;"></i>
-          <span>Menu</span>
+
+    <div class="dark-blue" id="blue"></div>
+
+    <!-- Search bar -->
+    <div class="search-bar">
+      <form
+        action="/search"
+        method="get"
+        role="search"
+        class="search-form">
+        <div class="search-input-container">
+          <input
+            type="text"
+            name="search"
+            placeholder="Search Lorem Ipsum">
+          <button type="submit" class="search-button">
+            Search
+            <i class="fa fa-search"></i>
+          </button>
         </div>
-  
-        <nav id="burger-nav">
-          <ul>
-            {% for link in section.settings.navigation_links %}
-              <li class="nav-item">
-                <a href="{{ link.link_url }}" class="nav-link">{{ link.link_text }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
-  
-        <div class="logo">
-          <a href="/">
-            <img
-            src="{{ 'logoDark.png' | asset_url }}"
-            alt="Vasta Logo"
-              width="140"
-              height="42"
-              class="logo-img">
-          </a>
-        </div>
-        <!-- Cart icon -->
-        <div class="cart">
-          <a href="/cart" class="cart-link">
-            <i class="fa fa-shopping-cart cart-icon"></i>
-            <span class="cart-count">{{ cart.item_count }}</span>
-          </a>
-          <span>CART</span>
-        </div>
-      </div>
-  
-      <div class="dark-blue" id="blue"></div>
-  
-      <!-- Search bar -->
-      <div class="search-bar">
-        <form
-          action="/search"
-          method="get"
-          role="search"
-          class="search-form">
-          <div class="search-input-container">
-            <input
-              type="text"
-              name="search"
-              placeholder="Search Lorem Ipsum">
-            <button type="submit" class="search-button">
-              Search
-              <i class="fa fa-search"></i>
-            </button>
-          </div>
-        </form>
-      </div>
+      </form>
     </div>
-  
-    <!-- Navigation menu -->
-    <div class="navigation-menu">
-      <ul class="nav-list">
-        {% for link in section.settings.navigation_links %}
-          <li class="nav-item">
-            <a href="{{ link.link_url }}" class="nav-link">{{ link.link_text }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  </header>
-  
-  <script>
+  </div>
+
+  <!-- Navigation menu -->
+  <div class="navigation-menu">
+    <ul class="nav-list">
+      {% for link in section.settings.navigation_links %}
+        <li class="nav-item">
+          <a href="{{ link.link_url }}" class="nav-link">{{ link.link_text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</header>
+
+<script>
     document.getElementById('burger-icon').addEventListener('click', function() {
       const nav = document.getElementById('burger-nav');
       const iconDisplay = document.getElementById('burger-icon-display');
@@ -247,5 +237,4 @@
         document.getElementById('burger-icon-close').style.display = 'none';
       });
     });
-  </script>
-  
+</script>
