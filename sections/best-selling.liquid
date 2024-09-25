@@ -3,7 +3,7 @@
   <div class="product-grid">
     {% for block in section.blocks %}
       <div class="product-card">
-        <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.product_name }}">
+        <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.product_name }}">
         <div id="product-info">
           <h3>{{ block.settings.product_name }}</h3>
           <div class="stars review">
@@ -19,102 +19,54 @@
     {% endfor %}
   </div>
 </div>
-
-<style>
-  .best-selling-products {
-    text-align: center;
-  }
-
-  .product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 2fr));
-    gap: 20px;
-    justify-content: center;
-  }
-
-  .product-card {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  .product-card img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .product-card h3 {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  .product-card .stars {
-    margin-top: 5px;
-    font-size: 14px;
-    color: #666;
-  }
-
-  @media (max-width: 768px) {
-    .best-selling-products .product-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
 {% schema %}
-{
-  "name": "Best Selling Products",
-  "settings": [
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Title",
-      "default": "Best Selling Products"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "Product",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Product Image"
-        }, 
-        {
-          "type": "text",
-          "id": "product_name",
-          "label": "Product Name",
-          "default": "Product Name"
-        }, 
-        {
-          "type": "number",
-          "id": "rating",
-          "label": "Rating",
-          "default": 5.0,
-          "min": 0,
-          "max": 5,
-          "step": 0.1
-        }, 
-        {
-          "type": "number",
-          "id": "total_reviews",
-          "label": "Total Reviews",
-          "default": 800
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Best Selling Products",
-      "category": "Custom Sections"
-    }
-  ]
-}
-{% endschema %}
+  {
+    "name": "Best Selling Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Best Selling Products"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          }, 
+          {
+            "type": "text",
+            "id": "product_name",
+            "label": "Product Name",
+            "default": "Product Name"
+          }, 
+          {
+            "type": "number",
+            "id": "rating",
+            "label": "Rating",
+            "default": 5
+          }, 
+          {
+            "type": "number",
+            "id": "total_reviews",
+            "label": "Total Reviews",
+            "default": 800
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Best Selling Products",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}
+  
