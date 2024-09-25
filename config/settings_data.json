@@ -338,6 +338,63 @@
         "settings": {
           "title": "You May Also Like"
         }
+      },
+      "faqs": {
+        "type": "faqs",
+        "settings": {
+          "title": "Vasta Essence: Dive into Our World",
+          "description": "Pellentesque cras adipiscing tempus libero vel nullam mauris tellus. Aliquam ultrices tellus consequat amet aliquam est in neque.",
+          "link_url": "/",
+          "button_text": "See More"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "collection_fq4bRy": {
+            "type": "collection",
+            "settings": {
+              "collection": "colecao-1",
+              "collection_title": "Collection Name"
+            }
+          },
+          "collection_NbWNqe": {
+            "type": "collection",
+            "settings": {
+              "collection": "colecao-1",
+              "collection_title": "Collection Name"
+            }
+          },
+          "collection_QP47f8": {
+            "type": "collection",
+            "settings": {
+              "collection": "colecao-1",
+              "collection_title": "Collection Name"
+            }
+          },
+          "collection_Y796i8": {
+            "type": "collection",
+            "settings": {
+              "collection": "colecao-1",
+              "collection_title": "Collection Name"
+            }
+          }
+        },
+        "block_order": [
+          "collection_fq4bRy",
+          "collection_NbWNqe",
+          "collection_QP47f8",
+          "collection_Y796i8"
+        ],
+        "settings": {
+          "email_coupon_text": "Enter Your Email To Receive 15% Coupon Immediately",
+          "email_placeholder": "Enter Email Address",
+          "email_button_text": "Give Me 15% OFF",
+          "contact_text": "Get In Contact",
+          "shop_by_collection_text": "Shop by Collection",
+          "footer_links": "",
+          "copyright_text": "All Rights Reserved."
+        }
       }
     },
     "content_for_index": [
