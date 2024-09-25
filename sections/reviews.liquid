@@ -56,6 +56,11 @@
           "default": "Lorem ipsum dolor sit amet."
         },
         {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
           "type": "text",
           "id": "product_name",
           "label": "Product Name",
@@ -80,20 +85,24 @@
   <div class="reviews-list">
     {% for review in section.blocks %}
       <div class="review">
-        <img src="{{ review.settings.image | img_url: '500x500' }}" alt="{{ review.settings.name }}" class="review-image"/>
-        <h3>{{ review.settings.name }}</h3>
-        <p>{{ review.settings.country }}</p>
-        <div class="rating">
-          {% for i in (1..5) %}
-            {% if i <= review.settings.rating %}
-              <span>⭐</span>
-            {% else %}
-              <span>☆</span>
-            {% endif %}
-          {% endfor %}
+        <img src="{{ review.settings.image | image_url }}" alt="{{ review.settings.name }}" class="review-image"/>
+        <div class="content">
+          <h3>{{ review.settings.name }}</h3>
+          <h4>{{ review.settings.country }}</h4>
+          <div class="rating">
+            {% for i in (1..5) %}
+              {% if i <= review.settings.rating %}
+                <i class="fa-solid fa-star"></i>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <p id="description">{{ review.settings.description }}</p>
+          
+          <div class="product">
+            <img src="{{ review.settings.product_image | img_url: '150x150' }}" alt="{{ review.settings.product_name }}" class="product-image"/>
+            <p>{{ review.settings.product_name }}</p>
+          </div>
         </div>
-        <p>{{ review.settings.description }}</p>
-        <p class="product">{{ review.settings.product_name }}</p>
       </div>
     {% endfor %}
   </div>
