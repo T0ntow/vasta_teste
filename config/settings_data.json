@@ -236,6 +236,7 @@
               "country": "United States",
               "rating": 5,
               "description": "Lorem ipsum dolor sit amet.",
+              "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
           },
@@ -247,6 +248,7 @@
               "country": "United States",
               "rating": 5,
               "description": "Lorem ipsum dolor sit amet.",
+              "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
           },
@@ -258,6 +260,7 @@
               "country": "United States",
               "rating": 5,
               "description": "Lorem ipsum dolor sit amet.",
+              "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
           },
@@ -269,6 +272,7 @@
               "country": "United States",
               "rating": 5,
               "description": "Lorem ipsum dolor sit amet.",
+              "product_image": "shopify://shop_images/img-product2.png",
               "product_name": "Product Name"
             }
           }
