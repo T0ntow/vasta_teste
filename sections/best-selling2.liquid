@@ -1,0 +1,72 @@
+<div class="best-selling-products">
+  <h2>{{ section.settings.title }}</h2>
+  <div class="product-grid">
+    {% for block in section.blocks %}
+      <div class="product-card">
+        <img src="{{ block.settings.image | image_url }}" alt="{{ block.settings.product_name }}">
+        <div id="product-info">
+          <h3>{{ block.settings.product_name }}</h3>
+          <div class="stars review">
+            {% for i in (1..block.settings.rating) %}
+              <i class="fa-solid fa-star"></i>
+            {% endfor %}
+            <span>
+              ({{ block.settings.rating }} of {{ block.settings.total_reviews }} Reviews)
+            </span>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Best Selling Products",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Best Selling Products"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product",
+        "name": "Product",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+          }, 
+          {
+            "type": "text",
+            "id": "product_name",
+            "label": "Product Name",
+            "default": "Product Name"
+          }, 
+          {
+            "type": "number",
+            "id": "rating",
+            "label": "Rating",
+            "default": 5
+          }, 
+          {
+            "type": "number",
+            "id": "total_reviews",
+            "label": "Total Reviews",
+            "default": 800
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Best Selling Products",
+        "category": "Custom Sections"
+      }
+    ]
+  }
+  {% endschema %}
+  
