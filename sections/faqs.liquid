@@ -1,0 +1,141 @@
+{% schema %}
+  {
+    "name": "Faqs Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Vasta Essence: Dive into Our World"
+      }, {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description",
+        "default": "Pellentesque cras adipiscing tempus libero vel nullam mauris tellus. Aliquam ultrices tellus consequat amet aliquam est in neque."
+      }, {
+        "type": "url",
+        "id": "link_url",
+        "label": "Button Link",
+        "default": "#"
+      }, {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text",
+        "default": "See More"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Default",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="faqs-section">
+  <h2>{{ section.settings.title }}</h2>
+  <div>
+    <p>{{ section.settings.description }}</p>
+    <a href="{{ section.settings.link_url }}">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</section>
+
+<style>
+  .faqs-section {
+    height: 135px;
+  }
+
+  .faqs-section h2 {
+    font-size: 36px;
+    text-align: center;
+    color: #252525;
+    margin-bottom: 35px;
+  }
+
+  .faqs-section p,
+  a {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .faqs-section div {
+    position: relative;
+    padding: 0 135px;
+    text-align: center;
+  }
+
+  .faqs-section p {
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .faqs-section p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, #FFFFFF 7.81%, #55555500 90%);
+    pointer-events: none;
+  }
+
+  .faqs-section a {
+    line-height: 20px;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000000;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .faqs-section h2 {
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 32px;
+    }
+
+    .faqs-section p,
+    a {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .faqs-section div {
+      padding: 0 40px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .faqs-section h2 {
+      font-size: 18px;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+
+    
+    .faqs-section div {
+      padding: 0 20px;
+    }
+
+    .faqs-section p,
+    a {
+      font-size: 14px;
+      line-height: 14px;
+    }
+  }
+</style>
