@@ -5,6 +5,10 @@
     padding: 65px 135px;
 
     color: #fff;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .footer-container .logo {
@@ -17,6 +21,10 @@
 }
 
 /* email-coupon */
+.email-coupon {
+    width: 700px;
+}
+
 .email-coupon p {
     margin-bottom: 12px;
 
@@ -53,6 +61,7 @@
     text-indent: 15px;
     background-color: transparent;
     font-size: 20px;
+    color: #fff;
 }
 
 .email-coupon .search-button {
@@ -76,4 +85,413 @@
     color: #fff;
     font-weight: bold;
     background-color: #17171A;
+}
+
+/* Coleções */
+.shop-by-collection-footer {
+    margin: 35px 0;
+}
+
+.shop-by-collection-footer h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.collection-list-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    height: 164.32px !important;
+}
+
+.collection-item-footer {
+    width: 110px !important;
+    max-width: 110px !important;
+    height: 100% !important;
+}
+
+.collection-item-footer h3 {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 2%;
+}
+
+/* footer-contact */
+
+.footer-contact>p {
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+
+    margin-bottom: 11px;
+}
+
+.footer-contact>span {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17.6px;
+    text-align: left;
+    color: #E8E8E8;
+}
+
+/* Parte direita */
+.right-block {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+/* Parte direita */
+.right-block .information {
+    width: 134px;
+    margin-right: 95px;
+}
+
+/* Parte direita */
+.right-block .customer-care {
+    width: 250px;
+    gap: 25px;
+}
+
+
+.right-block .information,
+.right-block .customer-care {
+    height: 147px;
+    transform: translateY(102px);
+    gap: 25px;
+}
+
+.right-block .information ul,
+.customer-care ul {
+    gap: 10px;
+}
+
+
+.right-block .information ul li,
+.customer-care ul li {
+    list-style: none;
+    color: #E8E8E8;
+}
+
+.right-block .information h5,
+.right-block .customer-care h5 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.right-block .payments {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 397.37px;
+    color: #E8E8E8;
+}
+
+.right-block .payments p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17.6px;
+    text-align: right;
+    width: 100%;
+    flex-wrap: nowrap;
+    translate: 0 10px;
+}
+
+
+/* Cartões */
+.right-block .payments .cards ul {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+}
+
+.right-block .payments .cards ul li {
+    list-style: none;
+}
+
+.right-block .payments .cards ul li img {
+    width: 69.84px;
+    height: 44px;
+}
+
+.bottom-block {
+    display: none;
+}
+
+@media (max-width: 1400px) {
+    .footer-container .logo {
+        text-align: center;
+    }
+}
+
+@media (max-width: 1350px) {
+    .footer-container {
+        flex-direction: column;
+        height: 1030px;
+        padding: 46px 20px;
+        align-items: center;
+    }
+
+    .footer-container .logo {
+        text-align: center;
+    }
+
+    .email-coupon {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .email-coupon .search-bar {
+        width: 600px;
+        margin-bottom: 40px;
+    }
+
+    .shop-by-collection-footer h4 {
+        text-align: center;
+    }
+
+    .collection-list-footer {
+        height: 224.32px !important;
+    }
+
+    .collection-item-footer {
+        width: 186px !important;
+        max-width: 160px !important;
+        height: 100% !important;
+    }
+
+    .footer-contact {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .footer-contact p {
+        text-align: center;
+    }
+
+    .footer-contact .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .right-block {
+        display: none;
+    }
+
+    .bottom-block {
+        display: block;
+    }
+
+    .bottom-block .top {
+        display: flex;
+        flex-direction: row;
+        gap: 150px;
+    }
+
+    .bottom-block .top .information {
+        position: relative;
+    }
+
+    .bottom-block .top .information::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -75px;
+        height: 100%;
+        /* Ensure the line spans the height of the element */
+        border-right: 1px solid gray;
+        width: 1px;
+        /* Optional: Define width for the pseudo-element */
+    }
+
+
+    .bottom-block .top h5 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 20px;
+        text-align: left;
+    }
+
+    .bottom-block .top ul li {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+        color: #E8E8E8;
+        margin: 10px 0;
+
+        list-style: none;
+    }
+
+    .bottom-block .payments {
+        margin-top: 40px;
+    }
+
+    .bottom-block .payments p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 17.6px;
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+
+
+    /* Cartões */
+    .bottom-block .payments .cards ul {
+        display: flex;
+        flex-direction: row;
+        gap: 11px;
+    }
+
+    .bottom-block .payments .cards ul li {
+        list-style: none;
+    }
+
+    .bottom-block .payments .cards ul li img {
+        width: 69.84px;
+        height: 44px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .footer-container .logo .logo-img {
+        width: 190px;
+        height: 50px;
+    }
+
+    .footer-container {
+        padding: 46px 106px;
+    }
+
+    .collection-list-footer {
+        height: 188.88px !important;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .collection-item-footer {
+        width: 126px !important;
+        max-width: 126px !important;
+        height: 100% !important;
+    }
+
+    .email-coupon {
+        width: 555px;
+    }
+
+    .email-coupon .search-bar {
+        width: 80vw;
+    }
+
+    .email-coupon .search-bar .search-button {
+        width: 35vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .shop-by-collection-footer {
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .footer-container .logo .logo-img {
+        width: 150px;
+        height: 40px;
+    }
+
+    .footer-container {
+        padding: 46px 20px;
+        height: 821px;
+    }
+
+    .collection-list-footer {
+        height: 113px !important;
+        gap: 10px;
+    }
+
+    .collection-item-footer {
+        width: 76px !important;
+        max-width: 76px !important;
+        height: 100% !important;
+    }
+
+    .email-coupon {
+        width: 320px;
+    }
+
+    .email-coupon p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+        text-align: center;
+    }
+
+    .email-coupon .search-input-container input {
+        font-size: 12px;
+        height: 29px;
+    }
+
+    .email-coupon .search-bar {
+        width: 80vw;
+        font-size: 12px;
+    }
+
+    .email-coupon .search-bar .search-button {
+        font-size: 12px;
+    }
+
+    .shop-by-collection-footer h4,
+    .footer-contact>p,
+    .bottom-block .top h5 {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.03em;
+    }
+
+    .footer-contact>span,
+    .bottom-block .top ul li {
+        font-size: 12px;
+        line-height: 13.2px;
+    }
+
+    .bottom-block .payments .cards ul li img {
+        width: 59.23px;
+        height: 35.54px;
+    }
+
+    .bottom-block .top {
+        justify-content: center;
+        gap: 0;
+    }
+
+    .bottom-block .top .information::after {
+        content: "";
+        display: none;
+    }
+
+    .bottom-block .top .information {
+        width: 133px;
+    }
+
+    .bottom-block .payments p {
+        font-size: 12px;
+        line-height: 15.62px;
+        text-align: center;
+
+    }
 }

@@ -1,153 +1,216 @@
 <!-- Custom Footer Section -->
 <section class="footer-container">
-  <!-- Logo -->
-  <div class="logo">
-    <a href="/">
-      <img
-        src="{{ 'logoLight.png' | asset_url }}"
-        alt="Vasta Logo"
-        width="140"
-        height="42"
-        class="logo-img">
-    </a>
-  </div>
-
-  <!-- Email Coupon Section -->
-  <div class="email-coupon">
-    <p>{{ section.settings.email_coupon_text }}</p>
-    <!-- Search bar -->
-    <div class="search-bar">
-      <form
-        action="/submit-email"
-        method="POST"
-        class="email-form">
-        <div class="search-input-container">
-          <input
-            type="text"
-            name="email"
-            placeholder="{{ section.settings.email_placeholder }}">
-          <button type="submit" class="search-button">
-            {{ section.settings.email_button_text }}
-          </button>
-        </div>
-      </form>
+  <!-- Parte esquerda -->
+  <div>
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/">
+        <img
+          src="{{ 'logoLight.png' | asset_url }}"
+          alt="Vasta Logo"
+          width="140"
+          height="42"
+          class="logo-img">
+      </a>
     </div>
-  </div>
-
-  <!-- Shop by Collection Section -->
-  <div class="shop-by-collection">
-    <h4>{{ section.settings.shop_by_collection_text }}</h4>
-    <div class="collection-list">
-      {% for block in section.blocks %}
-        <div class="collection-item">
-          <a href="{{ block.settings.collection | url }}">
-            <img src="{{ block.settings.collection | img_url: 'medium' }}" alt="{{ block.settings.collection_title }}">
-            <p>{{ block.settings.collection_title }}</p>
-          </a>
-        </div>
+    <!-- Email Coupon Section -->
+    <div class="email-coupon">
+      <p>{{ section.settings.email_coupon_text }}</p>
+      <!-- Search bar -->
+      <div class="search-bar">
+        <form
+          action="/submit-email"
+          method="POST"
+          class="email-form">
+          <div class="search-input-container">
+            <input
+              type="text"
+              name="email"
+              placeholder="{{ section.settings.email_placeholder }}">
+            <button type="submit" class="search-button">
+              {{ section.settings.email_button_text }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Shop by Collection Section -->
+    <div class="shop-by-collection-footer">
+      <h4>{{ section.settings.shop_by_collection_text }}</h4>
+      <div class="collection-list-footer">
+        {% for block in section.blocks %}
+          <div class="collection-item collection-item-footer" style="background-image: url('{{ block.settings.collection | image_url }}');">
+            <a href="{{ block.settings.collection | url }}">
+              <div class="collection-item-text">
+                <h3>{{ block.settings.collection_title }}</h3>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- Contact Information -->
+    <div class="footer-contact">
+      <p>{{ section.settings.contact_text }}</p>
+      <span class="contact">
+        <span>
+          <i class="fa fa-phone"></i>
+          +1 (715) 600-1564
+        </span>
+        <span>
+          <i class="fa fa-envelope "></i>
+          info@clenchfitness.com
+        </span>
+        <span>
+          <i class="fa fa-location-dot"></i>
+          New Richmond, WI 54017
+        </span>
+      </span>
+    </div>
+    <!-- Payment Icons -->
+    <div class="payment-icons">
+      {% for payment_icon in section.settings.payment_icons %}
+        <img src="{{ payment_icon.image | img_url: 'small' }}" alt="{{ payment_icon.name }}">
       {% endfor %}
     </div>
   </div>
 
-  <!-- Footer Links -->
-  <div class="footer-links">
-    {% for link in section.settings.footer_links %}
-      <a href="{{ link.link_url }}">{{ link.link_text }}</a>
-    {% endfor %}
+  <!-- Parte direita -->
+  <div class="right-block">
+    <div class="information">
+      <h5>Information</h5>
+      <ul>
+        <li>About us</li>
+        <li>Blog</li>
+        <li>Lorem Ipsum</li>
+        <li>Lorem Ipsum</li>
+      </ul>
+    </div>
+
+    <div class="customer-care">
+      <h5>Customer Care</h5>
+      <ul>
+        <li>Contact Us</li>
+        <li>Terms of service</li>
+        <li>Privacy Policy</li>
+        <li>Accessibility</li>
+      </ul>
+    </div>
+
+    <div class="payments">
+      <div class="cards">
+        <ul>
+          <li><img src="{{ 'card1.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card2.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card3.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card4.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card5.png' | asset_url }}" alt=""></li>
+        </ul>
+      </div>
+      <p>Copyright © 2023 Clench Fitness. All Right Reserved.</p>
+    </div>
   </div>
 
-  <!-- Contact Information -->
-  <div class="footer-contact">
-    <p>{{ section.settings.contact_text }}</p>
-    <p>{{ shop.phone }} | {{ shop.email }} | {{ shop.address }}</p>
-  </div>
+  <!-- Parte Inferior para mobile -->
+  <div class="bottom-block">
+    <div class="top">
+      <div class="information">
+        <h5>Information</h5>
+        <ul>
+          <li>About us</li>
+          <li>Blog</li>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+        </ul>
+      </div>
+      <div class="customer-care">
+        <h5 id="customer-care">Customer Care
+          <i class="fa-solid fa-angle-right" style="color: #fff; margin: 0 10px"></i>
+        </h5>
+      </div>
+    </div>
 
-  <!-- Payment Icons -->
-  <div class="payment-icons">
-    {% for payment_icon in section.settings.payment_icons %}
-      <img src="{{ payment_icon.image | img_url: 'small' }}" alt="{{ payment_icon.name }}">
-    {% endfor %}
+    <div class="payments">
+      <div class="cards">
+        <ul>
+          <li><img src="{{ 'card1.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card2.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card3.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card4.png' | asset_url }}" alt=""></li>
+          <li><img src="{{ 'card5.png' | asset_url }}" alt=""></li>
+        </ul>
+      </div>
+      <p>Copyright © 2023 Clench Fitness. All Right Reserved.</p>
+    </div>
   </div>
-
-  <p>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}. {{ section.settings.copyright_text }}</p>
 </section>
 
 {% schema %}
-{
-  "name": "Custom Footer Section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "email_coupon_text",
-      "label": "Email Coupon Text",
-      "default": "Enter Your Email To Receive 15% Coupon Immediately"
-    },
-    {
-      "type": "text",
-      "id": "email_placeholder",
-      "label": "Email Input Placeholder",
-      "default": "Enter Email Address"
-    },
-    {
-      "type": "text",
-      "id": "email_button_text",
-      "label": "Email Button Text",
-      "default": "Give Me 15% OFF"
-    },
-    {
-      "type": "text",
-      "id": "contact_text",
-      "label": "Contact Text",
-      "default": "Get In Contact"
-    },
-    {
-      "type": "text",
-      "id": "shop_by_collection_text",
-      "label": "Shop by Collection Section Title",
-      "default": "Shop by Collection"
-    },
-    {
-      "type": "link_list",
-      "id": "footer_links",
-      "label": "Footer Links"
-    },
-    {
-      "type": "image_picker",
-      "id": "payment_icons",
-      "label": "Payment Icons"
-    },
-    {
-      "type": "text",
-      "id": "copyright_text",
-      "label": "Copyright Text",
-      "default": "All Rights Reserved."
-    }
-  ],
-  "blocks": [
-    {
-      "type": "collection",
-      "name": "Collection",
-      "settings": [
-        {
-          "type": "collection",
-          "id": "collection",
-          "label": "Select Collection"
-        },
-        {
-          "type": "text",
-          "id": "collection_title",
-          "label": "Collection Title",
-          "default": "Collection Name"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Custom Footer Section",
-      "category": "Footer"
-    }
-  ],
-  "max_blocks": 4
-}
+  {
+    "name": "Custom Footer Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "email_coupon_text",
+        "label": "Email Coupon Text",
+        "default": "Enter Your Email To Receive 15% Coupon Immediately"
+      },
+      {
+        "type": "text",
+        "id": "email_placeholder",
+        "label": "Email Input Placeholder",
+        "default": "Enter Email Address"
+      },
+      {
+        "type": "text",
+        "id": "email_button_text",
+        "label": "Email Button Text",
+        "default": "Give Me 15% OFF"
+      },
+      {
+        "type": "text",
+        "id": "contact_text",
+        "label": "Contact Text",
+        "default": "Get In Contact"
+      }, {
+        "type": "text",
+        "id": "shop_by_collection_text",
+        "label": "Shop by Collection Section Title",
+        "default": "Popular Collection"
+      }, {
+        "type": "link_list",
+        "id": "footer_links",
+        "label": "Footer Links"
+      }, {
+        "type": "image_picker",
+        "id": "payment_icons",
+        "label": "Payment Icons"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Select Collection"
+          }, {
+            "type": "text",
+            "id": "collection_title",
+            "label": "Collection Title",
+            "default": "Collection Name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Footer Section",
+        "category": "Footer"
+      }
+    ],
+    "max_blocks": 4
+  }
 {% endschema %}
