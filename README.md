@@ -5,9 +5,6 @@ Este guia irá ajudá-lo a configurar e iniciar esta aplicação Shopify em sua 
 ## Pré-requisitos
 
 Antes de começar, certifique-se de ter os seguintes requisitos instalados:
-
-- [Node.js](https://nodejs.org/pt) versão 12.22.0 ou superior
-- [npm](https://docs.npmjs.com/getting-started) ou [Yarn](https://yarnpkg.com/)
 - [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) (para criar, desenvolver e testar apps)
 
 ## Passos para Configuração
