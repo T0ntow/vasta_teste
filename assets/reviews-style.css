@@ -39,9 +39,20 @@
 
 .reviews-section .reviews-list .review {
     width: 216px;
-    height: 511px;
+    height: auto;
     border-radius: 8px;
     overflow: hidden;
+    border: 1px solid #fff;
+    
+}
+
+
+
+.reviews-section .reviews-list .review:hover{
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(17, 16, 16, 0.329);
+  transform: translateY(-5px);
 }
 
 /* Conteudo do card */
@@ -264,7 +275,6 @@
 
     .reviews-section .reviews-list .review {
         min-height: 400px;
-        height: 450px;
     }
 
     .reviews-section .reviews-list .review-image {
