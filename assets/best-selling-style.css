@@ -27,17 +27,15 @@
     background-color: #F5F6FA;
     border-radius: 10px;
     width: 274px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 13.1px 0px #00000033;
 }
 
 .best-selling-products .product-card:hover {
     transition: all .3s ease;
     transform: translateY(-5px);
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.397);
+    box-shadow: 4px 4px 13.1px 0px #00000056;
 }
-
-
 
 .best-selling-products .product-card img {
     width: 274px;
