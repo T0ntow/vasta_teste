@@ -1,6 +1,6 @@
 # Shopify Application - Instruções de Instalação e Execução
 
-Este guia irá ajudá-lo a configurar e iniciar uma aplicação Shopify em sua máquina local. Ele abrange os requisitos de instalação, configuração e execução da aplicação.
+Este guia irá ajudá-lo a configurar e iniciar esta aplicação Shopify em sua máquina local. Ele abrange os requisitos de instalação, configuração e execução da aplicação.
 
 ## Pré-requisitos
 
