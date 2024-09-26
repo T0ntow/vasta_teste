@@ -21,16 +21,7 @@ git clone https://github.com/T0ntow/vasta_teste.git
 cd vasta_teste
 ```
 
-### 2 Instalar Dependências
-
-Dentro do diretório do projeto, instale as dependências necessárias para a aplicação:
-
-Usando npm:
-
-```
-npm install
-```
-### 1. Iniciar o Servidor de Desenvolvimento
+### 2. Iniciar o Servidor de Desenvolvimento
 
 ```
 shopify theme dev
